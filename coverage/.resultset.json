@@ -38,9 +38,30 @@
         null,
         1,
         null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        2,
+        1,
         1,
         null,
         1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/registrations_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
         null,
         1,
         0,
@@ -91,6 +112,6 @@
         0
       ]
     },
-    "timestamp": 1476759513
+    "timestamp": 1476823851
   }
 }

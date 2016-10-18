@@ -1,4 +1,4 @@
-![Build Status](https://codeship.com/projects/<f7dd2ab0-76c9-0134-78ea-72db67b0714c>/status?branch=master)
+![Build Status](https://codeship.com/projects/f7dd2ab0-76c9-0134-78ea-72db67b0714c/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/Pete-Eichman/Breakable-Toy.png)
 ![Coverage Status](https://coveralls.io/repos/Pete-Eichman/Breakable-Toy/badge.png)
 
