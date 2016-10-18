@@ -1,0 +1,117 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Pete/challenges/breakable-toy-final/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/static_pages_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        2,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/registrations_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Pete/challenges/breakable-toy-final/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1476823851
+  }
+}
