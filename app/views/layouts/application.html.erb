@@ -30,6 +30,15 @@
         <% end %>
       <% end %>
     </div>
+    <% if !current_user %>
+      <div id="sub_top_bar" class='row'>
+        <div class='col right'>
+          <%= link_to "Facebook", user_facebook_omniauth_authorize_path, id: "top_link", class: "sign_in_links"  %>
+          <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "sign_in_links"  %>
+        </div>
+      </div>
+    <% end %>
+
     <div>
       <% if flash[:notice] %>
         <p class="center-align"><%= flash[:notice] %></p>
