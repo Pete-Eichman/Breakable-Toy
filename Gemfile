@@ -6,8 +6,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'materialize-sass'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'

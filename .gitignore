@@ -15,5 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
 .env
+
 /coveralls
+
+app/assets/javascripts/bundle.js
