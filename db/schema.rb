@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20161017232153) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "parking_pass_id_id", null: false
-    t.integer "user_id_id",         null: false
-    t.string  "timespan",           null: false
-    t.index ["parking_pass_id_id"], name: "index_bookings_on_parking_pass_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_bookings_on_user_id_id", using: :btree
+    t.integer "parking_pass_id", null: false
+    t.integer "user_id",         null: false
+    t.string  "start_time",      null: false
+    t.string  "end_time",        null: false
+    t.index ["parking_pass_id"], name: "index_bookings_on_parking_pass_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "parking_passes", force: :cascade do |t|
