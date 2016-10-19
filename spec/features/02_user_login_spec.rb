@@ -69,5 +69,9 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_link("Forgot your password?")
       expect(page).to have_content("Remember me")
     end
+    scenario "User can see a Facebook login link" do
+
+      expect(page).to have_link("Facebook")
+    end
   end
 end
