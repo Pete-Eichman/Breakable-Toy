@@ -1,5 +1,4 @@
 class ParkingPassesController < ApplicationController
-  before action :authenticate_user!
 
   def index
     @parking_passes = ParkingPass.all.order(created_at: :desc)
@@ -19,11 +18,12 @@ class ParkingPassesController < ApplicationController
 
   def create
     if current_user
-      @parking_pass = ParkingPass.new
+      @parking_pass = ParkingPass.new(parking_pass_params)
       if @parking_pass.save
         flash[:success] = "Created Parking Pass!"
-        user.owner == true
-        user.save
+        current_user.owner == true
+        current_user.save
+        redirect_to user_path(@current_user)
       else
         flash[:errors] = "Parking Pass could not be created"
         render :new
@@ -39,6 +39,12 @@ class ParkingPassesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def parking_pass_params
+    params.require(:parking_pass).permit(:parking_pass, :pass_number, :address, :price_per_hour).merge(user: current_user)
   end
 
 end

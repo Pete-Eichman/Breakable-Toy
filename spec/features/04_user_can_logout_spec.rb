@@ -7,7 +7,7 @@ feature "User can logout" do
   context "As a user, after signing in" do
     scenario "I can click a link to logout" do
       visit '/'
-      click_link("Logout")
+      click_link("Sign Out")
 
       expect(page).to_not have_content("Signed in as")
       expect(page).to_not have_content("Signed in successfully.")

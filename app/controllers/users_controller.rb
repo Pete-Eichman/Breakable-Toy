@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   def user_valid_destroy
     @user.destroy
-    flash[:success] = "User Account successfully closed"
+    flash[:success] = "User Account successfully deleted."
     admin_redirect
   end
 end
