@@ -21,7 +21,7 @@ class ParkingPassesController < ApplicationController
       @parking_pass = ParkingPass.new(parking_pass_params)
       if @parking_pass.save
         flash[:success] = "Created Parking Pass!"
-        current_user.owner == true
+        current_user.update_attribute(:owner, true)
         current_user.save
         redirect_to user_path(@current_user)
       else

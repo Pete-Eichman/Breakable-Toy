@@ -52,6 +52,7 @@ class UsersController < ApplicationController
   end
 
   def user_valid_destroy
+    @user.parking_passes.destroy_all
     @user.destroy
     flash[:success] = "User Account successfully deleted."
     admin_redirect

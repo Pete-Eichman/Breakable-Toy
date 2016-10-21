@@ -1,5 +1,5 @@
 <h1 class="center"><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
-<h5><%= @user.first_name %>'s Parking Passes</h5>
+<h5 class="center"><%= @user.first_name %>'s Parking Passes</h5>
 <hr/>
   <% @user.parking_passes.each do |parking_pass| %>
     <ul>
@@ -8,8 +8,8 @@
     </ul>
   <% end %><br/>
   <% if current_user.try(:admin?) || current_user == @user %>
-    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn" %></br></br>
-    <%= link_to "Edit User account", edit_user_registration_path, class: "btn" %></br></br>
+    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn" %></br>
+    <%= link_to "Edit User Account", edit_user_registration_path, class: "btn" %></br>
     <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn" %>
   <% end %>
 </div>
