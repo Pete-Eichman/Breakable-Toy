@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021174947) do
+ActiveRecord::Schema.define(version: 20161021201249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(version: 20161021174947) do
   end
 
   create_table "parking_passes", force: :cascade do |t|
-    t.integer "user_id",        null: false
-    t.integer "booking_id"
-    t.string  "address",        null: false
-    t.integer "price_per_hour", null: false
-    t.integer "pass_number",    null: false
+    t.integer  "user_id",        null: false
+    t.integer  "booking_id"
+    t.string   "address",        null: false
+    t.integer  "price_per_hour", null: false
+    t.integer  "pass_number",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["booking_id"], name: "index_parking_passes_on_booking_id", using: :btree
     t.index ["user_id"], name: "index_parking_passes_on_user_id", using: :btree
   end

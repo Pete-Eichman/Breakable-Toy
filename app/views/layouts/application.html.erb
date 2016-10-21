@@ -18,7 +18,9 @@
             </br>
             <p class="left"><i class="material-icons left">person_pin</i><%= link_to "My Profile", user_path(current_user) %></p>
             <p class="right"><i class="material-icons left">power_settings_new</i><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+            <p class="center"><%= link_to "Parking Passes", parking_passes_path %></p>
         </div>
+      </br><hr>
       <% else%>
         <% if controller_name != "sessions" && action_name != "new" %>
           <% if controller_name != "registrations"%>
