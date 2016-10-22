@@ -1,0 +1,10 @@
+<h1 class="center align">All Parking Passes</h1>
+<div id="index_div">
+  <% @parking_passes.each do |parking_pass| %>
+    <ul>
+      <li>Address: <%= parking_pass.address %></li>
+    </ul>
+    <li>Pass Number: <%= parking_pass.pass_number %></li>
+    <li>Price Per Hour: <%= parking_pass.price_per_hour %></li></br>
+  <% end %>
+</div>
