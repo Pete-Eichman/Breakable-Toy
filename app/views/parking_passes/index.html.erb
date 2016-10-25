@@ -2,7 +2,7 @@
 <div id="index_div">
   <% @parking_passes.each do |parking_pass| %>
     <ul>
-      <li>Address: <%= parking_pass.address %></li>
+      <li>Address: <%= link_to parking_pass.address, parking_pass_path(parking_pass.id) %></li>
     </ul>
     <li>Pass Number: <%= parking_pass.pass_number %></li>
     <li>Price Per Hour: <%= parking_pass.price_per_hour %></li></br>

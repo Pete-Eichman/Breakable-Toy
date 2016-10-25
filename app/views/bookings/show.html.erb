@@ -1,0 +1,6 @@
+<%= @user.bookings.each do |booking| %>
+  <ul>
+    <li>Start Time: <%= booking.start_time%></li>
+    <li>End Time: <%=booking.end_time %></li>
+  </ul>
+<% end %></br>

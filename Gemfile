@@ -10,6 +10,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'materialize-sass'
+gem "geokit-rails"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
