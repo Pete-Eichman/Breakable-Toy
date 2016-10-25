@@ -1,15 +1,35 @@
-<h1 class="center"><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
-<h5 class="center"><%= @user.first_name %>'s Parking Passes</h5>
-<hr/>
+<h1 class="center-align">
+  <%= @user.first_name %> <%= @user.last_name %>'s Profile
+</h1>
+<% if current_user.try(:admin?) || current_user == @user %>
+  <div class="center">
+    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn" %>
+  </div>
+<% end %>
+</br>
+<h5 class="center-align"><%= @user.first_name %>'s owned Parking Passes:</h5>
+<hr>
   <% @user.parking_passes.each do |parking_pass| %>
-    <ul>
+    </br>
+    <div class="center-align"><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn-large" %></div>
+    <ul class= "center-align">
       <li>Pass Number: <%= parking_pass.pass_number%></li>
-      <li>Address: <%=parking_pass.address %></li>
+      <li>Price Per Hour: <%= parking_pass.price_per_hour%></li>
+      <li>Latitude: <%= parking_pass.lat %></li>
+      <li>Longitude: <%= parking_pass.lng %></li>
     </ul>
-  <% end %><br/>
+    <% if current_user.try(:admin?) || current_user == @user %>
+      <div class="center-align">
+        <%= link_to "Edit Parking Pass", edit_parking_pass_path, class: "btn", id: "edit" %>
+        <%= link_to "Delete Parking Pass", parking_pass_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
+      </div></br>
+    <% end %>
+    <hr>
+  <% end %>
   <% if current_user.try(:admin?) || current_user == @user %>
-    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn" %></br>
-    <%= link_to "Edit User Account", edit_user_registration_path, class: "btn" %></br>
-    <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn" %>
+    <div class="center-align">
+      <%= link_to "Edit User Account", edit_user_registration_path, class: "btn", id: "edit" %>
+      <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
+    </div>
   <% end %>
 </div>

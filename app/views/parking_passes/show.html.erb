@@ -1,0 +1,5 @@
+<h5 class="center-align">Pass Number: <%= @parking_pass.pass_number %></h5>
+<h5 class="center-align">Address: <%= @parking_pass.address %></h5>
+<h5 class="center-align">Price Per Hour: <%= @parking_pass.price_per_hour %></h5>
+
+<div class="center-align"></br><%= link_to "Create a Booking", new_parking_pass_booking_path(@parking_pass, @current_user), class: "btn" %></div>

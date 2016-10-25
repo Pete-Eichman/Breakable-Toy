@@ -5,5 +5,7 @@ FactoryGirl.define do
     sequence(:pass_number) { |n| "#{n}" }
     sequence(:address) { |n| "#{n}" }
     sequence(:price_per_hour){ |n| "${n}" }
+    sequence(:lat) { |n| "#{n}"}
+    sequence(:lng) { |n| "#{n}"}
   end
 end

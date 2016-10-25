@@ -3,4 +3,61 @@
 
 body {
   background-color: #184B59;
+  color: white;
+}
+
+.material-icons{
+  color: white;
+}
+
+#map {
+  height: 100%;
+  top: 45px;
+  border: 2px solid #ffffff;
+
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#floating-panel {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  z-index: 5;
+  background-color: #fff;
+  color: black;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+.text_area{
+  color: white;
+}
+
+.btn {
+  border: 2px solid #ffffff;
+}
+
+.btn:hover {
+  background-color: green;
+}
+
+#edit:hover {
+  background-color: yellow;
+  color: black;
+}
+
+#delete:hover {
+  background-color: red;
+  color: black;
+}
+
+.btn-large {
+  font-size: .8rem;
 }

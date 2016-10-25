@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-feature "User visits parking passes page" do
+feature "User visits the map page" do
   let!(:users) { FactoryGirl.create_list(:user, 2) }
   let!(:parking_pass) { FactoryGirl.create(:parking_pass, user: users[0]) }
   context "As an authenticated user" do
-    scenario "I can click on a link bringing me to the parking pass index page." do
+    scenario "I can click on a link bringing me to the map page." do
       login_as(users[1], scope: :user)
-      visit root_path
-      save_and_open_page
-      click_link("Parking Passes")
+      visit maps_path
 
-      expect(page).to have_content parking_pass.address
-      expect(page).to have_content parking_pass.pass_number
+      click_link("Search Your Destination")
+      save_and_open_page
+      parent = page.find('div#floating-panel')
+      expect(parent).to have_css('.geocoder')
     end
   end
 end

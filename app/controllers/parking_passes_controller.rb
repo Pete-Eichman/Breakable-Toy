@@ -2,9 +2,11 @@ class ParkingPassesController < ApplicationController
 
   def index
     @parking_passes = ParkingPass.all.order(created_at: :desc)
+    render json: @parking_passes.to_json
   end
 
   def show
+    @parking_pass = ParkingPass.find(params[:id])
   end
 
   def new
@@ -19,14 +21,17 @@ class ParkingPassesController < ApplicationController
   def create
     if current_user
       @parking_pass = ParkingPass.new(parking_pass_params)
-      if @parking_pass.save
+      if @parking_pass.geolocate['results'][0].nil?
+        flash[:errors] = "Parking Pass could not be mapped"
+        render :new
+      else
+        @parking_pass.lat = @parking_pass.geolocate['results'][0]['geometry']['location']['lat']
+        @parking_pass.lng = @parking_pass.geolocate['results'][0]['geometry']['location']['lng']
+        @parking_pass.save
         flash[:success] = "Created Parking Pass!"
         current_user.update_attribute(:owner, true)
         current_user.save
         redirect_to user_path(@current_user)
-      else
-        flash[:errors] = "Parking Pass could not be created"
-        render :new
       end
     end
   end
@@ -36,15 +41,40 @@ class ParkingPassesController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @parking_pass = ParkingPass.find(params[:id])
+    if authorized_party
+      if @parking_pass.save
+        flash[:success] = "Parking Pass was Updated!"
+        redirect_to parking_pass_path(@parking_pass)
+      else
+        flash[:error] = "Parking Pass could not be Updated"
+        render parking_pass_path(@parking_pass)
+      end
+    end
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @parking_pass = ParkingPass.find(params[:id])
+    if authorized_party
+      @parking_pass.destroy
+      flash[:success] = "Parking Pass was deleted!"
+      redirect_to user_path
+    else
+      flash[:error] = "Parking Pass could not be deleted"
+      redirect_to user_path
+    end
   end
 
   private
 
   def parking_pass_params
     params.require(:parking_pass).permit(:parking_pass, :pass_number, :address, :price_per_hour).merge(user: current_user)
+  end
+
+  def authorized_party
+    current_user.try(:admin?) || current_user == @user
   end
 
 end
