@@ -12,6 +12,7 @@ gem 'dotenv-rails'
 gem 'materialize-sass'
 gem "geokit-rails"
 
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'

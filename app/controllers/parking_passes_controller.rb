@@ -55,15 +55,15 @@ class ParkingPassesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @parking_pass = ParkingPass.find(params[:id])
+    @user = @parking_pass.user
     if authorized_party
       @parking_pass.destroy
       flash[:success] = "Parking Pass was deleted!"
-      redirect_to user_path
+      redirect_to user_path(@user)
     else
       flash[:error] = "Parking Pass could not be deleted"
-      redirect_to user_path
+      redirect_to user_path(@user)
     end
   end
 
@@ -74,7 +74,7 @@ class ParkingPassesController < ApplicationController
   end
 
   def authorized_party
-    current_user.try(:admin?) || current_user == @user
+    current_user.try(:admin?) || current_user == @parking_pass.user
   end
 
 end
