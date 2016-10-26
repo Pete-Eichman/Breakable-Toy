@@ -21,7 +21,7 @@
     <% if current_user.try(:admin?) || current_user == @user %>
       <div class="center-align">
         <%= link_to "Edit Parking Pass", edit_parking_pass_path, class: "btn", id: "edit" %>
-        <%= link_to "Delete Parking Pass", parking_pass_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
+        <%= link_to "Delete Parking Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
       </div></br>
     <% end %>
     <hr>

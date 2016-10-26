@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :phone_number, presence: true
 
   validates_uniqueness_of :phone_number
   # Include default devise modules. Others available are:
@@ -20,7 +19,11 @@ class User < ApplicationRecord
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.username = auth.info.name if auth.provider == 'facebook'
+        if auth.provider == 'facebook'
+          names = auth.info.name.split(' ', 2)
+          user.first_name = names.first
+          user.last_name = names.last
+        end
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
       end
