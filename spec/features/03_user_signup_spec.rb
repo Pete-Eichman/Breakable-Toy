@@ -60,7 +60,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to_not have_content("Password can't be blank")
       expect(page).to_not have_content("Password confirmation doesn't match Password")
@@ -77,45 +76,11 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to_not have_content("Password can't be blank")
       expect(page).to_not have_content("Password confirmation doesn't match Password")
     end
-    scenario "User leaves phone number blank" do
-      fill_in("First name", with: "firstname")
-      fill_in("Last name", with: "lastname")
-      fill_in("Phone number", with: "")
-      fill_in("Email", with: "22@gmail.com")
-      fill_in("Password", with: "222222")
-      fill_in("Password confirmation", with: "222222")
-      click_button("Sign up")
-
-      expect(page).to_not have_content("First name can't be blank")
-      expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to have_content("Phone number can't be blank")
-      expect(page).to_not have_content("Email can't be blank")
-      expect(page).to_not have_content("Password can't be blank")
-      expect(page).to_not have_content("Password confirmation doesn't match Password")
-    end
-
-    scenario "User leaves email blank" do
-      fill_in("First name", with: "firstname")
-      fill_in("Last name", with: "lastname")
-      fill_in("Phone number", with: "222-222-2222")
-      fill_in("Email", with: "")
-      fill_in("Password", with: "222222")
-      fill_in("Password confirmation", with: "222222")
-      click_button("Sign up")
-
-      expect(page).to_not have_content("First name can't be blank")
-      expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
-      expect(page).to have_content("Email can't be blank")
-      expect(page).to_not have_content("Password can't be blank")
-      expect(page).to_not have_content("Password confirmation doesn't match Password")
-    end
-
+    
     scenario "User leaves password blank" do
       fill_in("First name", with: "firstname")
       fill_in("Last name", with: "lastname")
@@ -127,7 +92,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to have_content("Password can't be blank")
       expect(page).to have_content("Password confirmation doesn't match Password")
@@ -144,7 +108,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to_not have_content("Password can't be blank")
       expect(page).to have_content("Password confirmation doesn't match Password")
@@ -162,7 +125,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to have_content("Email is invalid")
       expect(page).to_not have_content("Password can't be blank")
       expect(page).to_not have_content("Password confirmation doesn't match Password")
@@ -179,7 +141,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to have_content("Password is too short (minimum is 6 characters)")
       expect(page).to_not have_content("Password confirmation doesn't match Password")
@@ -196,7 +157,6 @@ feature "As an unregistered user, I can create an account" do
 
       expect(page).to_not have_content("First name can't be blank")
       expect(page).to_not have_content("Last name can't be blank")
-      expect(page).to_not have_content("Phone number can't be blank")
       expect(page).to_not have_content("Email can't be blank")
       expect(page).to have_content("Password is too short (minimum is 6 characters)")
       expect(page).to have_content("Password confirmation doesn't match Password")
