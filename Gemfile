@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'materialize-sass'
 gem "geokit-rails"
+gem 'twilio-ruby', '~> 4.11.1'
 
 
 group :development, :test do

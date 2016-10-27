@@ -19,7 +19,7 @@ class Booking < ApplicationRecord
     if @host.pending_bookings.length > 1 or !force
       return
     else
-      message = "You have a new booking request from #{name} for #{parking_pass.address}:
+      message = "You have a new booking request from #{first_name} #{last_name} for #{parking_pass.address}:
 
       '#{message}'
 

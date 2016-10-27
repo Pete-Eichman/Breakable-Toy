@@ -48,8 +48,8 @@ class User < ApplicationRecord
   end
 
   def full_number
-    country_code_number = country_code.gsub('+', '')
-    "+#{country_code_number}#{phone_number}"
+    formatted_phone_number = phone_number.gsub('-', '')
+    "+1#{formatted_phone_number}"
   end
 
   def pending_booking

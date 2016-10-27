@@ -14,23 +14,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # @booking = Booking.new(booking_params)
-
-    # @parking_pass = ParkingPass.find(params[:parking_pass_id])
-    # flash[:success] = "Created Booking!"
-    # @booking.save
-    # @parking_pass.update_attribute(:booking_id, booking_params)
-    # @parking_pass.save
-    # @user.update_attribute(:booking_id, booking_params)
-    # @user.save
-    # redirect_to parking_pass_path(@parking_pass)
     @booking = Booking.new(booking_params)
     @parking_pass = ParkingPass.find(params[:parking_pass_id])
     @booking.parking_pass = @parking_pass
     @user = current_user
     @booking.user = @user
 
-
+    binding.pry
     if @booking.save
       flash[:notice] = 'Sending your booking request now.'
       @booking.notify_host(true)
