@@ -29,4 +29,34 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def send_message_via_sms(message)
+    client = Twilio::REST::Client.new(
+      ENV['TWILIO_ACCOUNT_SID'],
+      ENV['TWILIO_AUTH_TOKEN']
+    )
+
+    client.messages.create(
+      from: ENV['TWILIO_NUMBER'],
+      to: full_number,
+      body: message
+    )
+  end
+
+  def check_for_reservations_pending
+    pending_reservation.notify_host(true) if pending_reservation
+  end
+
+  def full_number
+    country_code_number = country_code.gsub('+', '')
+    "+#{country_code_number}#{phone_number}"
+  end
+
+  def pending_reservation
+    reservations.where(status: "pending").first
+  end
+
+  def pending_reservations
+    reservations.where(status: "pending")
+  end
 end
