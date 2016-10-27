@@ -43,8 +43,8 @@ class User < ApplicationRecord
     )
   end
 
-  def check_for_reservations_pending
-    pending_reservation.notify_host(true) if pending_reservation
+  def check_for_bookings_pending
+    pending_booking.notify_host(true) if pending_booking
   end
 
   def full_number
@@ -52,11 +52,11 @@ class User < ApplicationRecord
     "+#{country_code_number}#{phone_number}"
   end
 
-  def pending_reservation
-    reservations.where(status: "pending").first
+  def pending_booking
+    bookings.where(status: "pending").first
   end
 
-  def pending_reservations
-    reservations.where(status: "pending")
+  def pending_bookings
+    bookings.where(status: "pending")
   end
 end
