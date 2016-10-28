@@ -38,7 +38,6 @@ feature "As an unregistered user, I can create an account" do
       fill_in("Password confirmation", with: "abcedf")
       click_button("Sign up")
 
-      expect(page).to have_content("Signed in as email02")
       expect(page).to_not have_content("First name")
       expect(page).to_not have_field("First name")
       expect(page).to_not have_content("Last name")
@@ -80,7 +79,7 @@ feature "As an unregistered user, I can create an account" do
       expect(page).to_not have_content("Password can't be blank")
       expect(page).to_not have_content("Password confirmation doesn't match Password")
     end
-    
+
     scenario "User leaves password blank" do
       fill_in("First name", with: "firstname")
       fill_in("Last name", with: "lastname")
