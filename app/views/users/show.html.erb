@@ -1,38 +1,54 @@
 <% if current_user == @user %>
-  <div class="center">
-    <h3 class="center">
-      My Profile
-    </h3>
-    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn-large waves-effect waves-light" %>
+  <div class="center-align">
+  </br>
+    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %></br></br>
+    <%= link_to "Edit User Account", edit_user_registration_path, class: "btn", id: "edit" %>
+    <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
   </div>
 <% else %>
-  <h1 class="center-align">
-    <%= @user.first_name %> <%= @user.last_name %>'s Profile
-  </h1>
-  <% end %>
-<hr>
-</br>
-<h5 class="center-align"><%= @user.first_name %>'s owned Parking Passes:</h5>
-  <% @user.parking_passes.each do |parking_pass| %>
-    <div class="col s6 center-align"><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn waves-effect waves-light" %></div>
-    <ul class= "col s6 center-align">
-      <li>Pass Number: <%= parking_pass.pass_number%></li>
-      <li>Price Per Hour: <%= parking_pass.price_per_hour%></li>
-      <li>Latitude: <%= parking_pass.lat %></li>
-      <li>Longitude: <%= parking_pass.lng %></li>
-    </ul>
-    <% if current_user.try(:admin?) || current_user == @user %>
-      <div class="center-align">
-        <%= link_to "Edit Parking Pass", edit_parking_pass_path(parking_pass), class: "btn", id: "edit" %>
-        <%= link_to "Delete Parking Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
-      </div></br>
-    <% end %>
-    <hr>
-  <% end %>
-  <% if current_user.try(:admin?) || current_user == @user %>
-    <div class="center-align">
-      <%= link_to "Edit User Account", edit_user_registration_path, class: "btn", id: "edit" %>
-      <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
+  </br>
+  <div class="row center-align">
+    <div class="col s12" id = "userpasses">
+      <h1>
+        <%= @user.first_name %> <%= @user.last_name %>'s Profile
+      </h1>
     </div>
+  </div>
   <% end %>
+</br>
+<div class="row center">
+  <div class = "col s6 offset-s3" id = "userpasses">
+    <h5><%= @user.first_name %>'s owned Parking Passes:</h5>
+      <% @user.parking_passes.each do |parking_pass| %>
+        <hr>
+        <div><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn waves-effect waves-light" %></div>
+        <ul>
+          <li>Pass Number: <%= parking_pass.pass_number%></li>
+          <li>Price Per Hour: <%= parking_pass.price_per_hour%></li>
+          <li>Latitude: <%= parking_pass.lat %></li>
+          <li>Longitude: <%= parking_pass.lng %></li>
+        </ul>
+        <% if current_user.try(:admin?) || current_user == @user %>
+          <div>
+            <%= link_to "Edit Parking Pass", edit_parking_pass_path(parking_pass), class: "btn", id: "edit" %>
+            <%= link_to "Delete Parking Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
+          </div></br>
+        <% end %>
+      <% end %>
+      <% if current_user.try(:admin?) || current_user == @user %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row center">
+  <div class = "col s6 offset-s3" id = "userbookings">
+    <h5><%= @user.first_name %>'s Bookings:</h5>
+      <% @user.bookings.each do |booking| %>
+        <hr>
+        <%= booking.parking_pass.address %>
+        <%= booking.start_time %>
+        <%= booking.end_time %>
+        <%= booking.date %>
+      <% end %>
+  </div>
 </div>

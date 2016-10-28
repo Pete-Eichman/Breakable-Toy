@@ -10,7 +10,7 @@
 
   <body>
     <nav>
-      <div class="nav-wrapper green">
+      <div class="nav-wrapper">
       <% if current_user %>
         <div>
           <div class="left">
@@ -25,10 +25,8 @@
             power_settings_new
           </i>
         </div>
-        <div class="center-align">
-          <i class="material-icons center">
-            <%= link_to "PARK ME!", maps_path %> search
-          </i>
+        <div class="center">
+          <%= link_to "Search Your Destination", maps_path %>
         </div>
       </div>
       <% else%>

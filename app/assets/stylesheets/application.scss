@@ -2,8 +2,14 @@
 @import "materialize";
 
 body {
-  background-color: #184B59;
-  color: white;
+  background-color: #b9f6ca;
+  color: black;
+}
+
+.nav-wrapper {
+  background-color: #00c853;
+  height: 20%;
+
 }
 
 .material-icons{
@@ -11,9 +17,10 @@ body {
 }
 
 #map {
-  height: 100%;
-  top: 45px;
-  border: 2px solid #ffffff;
+  left: 5%;
+  height: 80%;
+  top: 10%;
+  width: 90%;
 
 }
 
@@ -24,20 +31,26 @@ html, body {
 }
 #floating-panel {
   position: absolute;
-  top: 60px;
-  left: 0px;
+  top: 11%;
   z-index: 5;
-  background-color: #fff;
+  left: 21%;
+  width: 61%;
+  background-color: #b9f6ca;
   color: black;
-  padding: 5px;
-  border: 1px solid #999;
   text-align: center;
   font-family: 'Roboto','sans-serif';
-  line-height: 30px;
+  line-height: 35px;
   padding-left: 10px;
+
+  #address {
+    width: 40rem;
+    height: 3rem;
+  }
+
+
 }
 .text_area{
-  color: white;
+  color: black;
 }
 
 .btn {
@@ -60,4 +73,26 @@ html, body {
 
 .btn-large {
   font-size: .8rem;
+}
+
+#userpasses {
+  background-color: #00e5ff;
+  border: 2px solid #ffffff;
+  border-radius: 25px
+}
+
+#userbookings {
+  background-color: #00e5ff;
+  border: 2px solid #ffffff;
+  border-radius: 25px
+}
+
+#passinfo {
+  background-color: #00e5ff;
+  border: 2px solid #ffffff;
+  border-radius: 25px
+}
+
+#form {
+  background-color: #00e5ff;
 }

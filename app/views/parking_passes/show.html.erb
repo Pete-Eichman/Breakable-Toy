@@ -1,15 +1,25 @@
-<h5 class="center-align">Pass Number: <%= @parking_pass.pass_number %></h5>
-<h5 class="center-align">Address: <%= @parking_pass.address %></h5>
-<h5 class="center-align">Price Per Hour: <%= @parking_pass.price_per_hour %></h5>
-
-<div class="center-align"></br><%= link_to "Create a Booking", new_parking_pass_booking_path(@parking_pass), class: "btn" %></div>
-
-
-<h5 class="center-align"><%= @parking_pass.address %>'s Bookings:</h5>
-  <% @parking_pass.bookings.each do |booking| %>
-    <ul class= "center-align">
-      <li>Start Time: <%= booking.start_time%></li>
-      <li>End Time: <%= booking.end_time%></li>
-    </ul>
-  <% end %>
-<hr>
+</br>
+<div class="row center-align">
+  <div class="col s8 offset-s2" id="passinfo">
+    <h1><%= @parking_pass.address %></h1>
+    <h5>Pass#: <%= @parking_pass.pass_number %></h5>
+    <h5>Price Per Hour: <%= "$#{'%.02f' % @parking_pass.price_per_hour}"  %></h5>
+    <h5>Pass Owner: <%= @parking_pass.user.first_name %> <%= @parking_pass.user.last_name %></h5>
+  </br>
+    <div class="center-align">
+      <%= link_to "Create a Booking", new_parking_pass_booking_path(@parking_pass), class: "btn" %>
+    </div>
+  </br>
+  </div>
+</div>
+</br>
+<div class="row center-align">
+  <div class="col s8 offset-s2" id="passinfo">
+    <h3 class="center-align">Bookings:</h3>
+    <% @parking_pass.bookings.each do |booking| %>
+      <ul class= "center-align">
+        <li>Start Time: <%= booking.start_time%></li>
+        <li>End Time: <%= booking.end_time%></li>
+      </ul>
+    <% end %>
+    <hr>
