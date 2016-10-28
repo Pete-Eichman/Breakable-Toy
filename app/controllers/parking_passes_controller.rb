@@ -29,8 +29,6 @@ class ParkingPassesController < ApplicationController
         @parking_pass.lng = @parking_pass.geolocate['results'][0]['geometry']['location']['lng']
         @parking_pass.save
         flash[:success] = "Created Parking Pass!"
-        current_user.update_attribute(:owner, true)
-        current_user.save
         redirect_to user_path(@current_user)
       end
     end

@@ -1,18 +1,21 @@
-<h1 class="center-align">
-  <%= @user.first_name %> <%= @user.last_name %>'s Profile
-</h1>
-<% if current_user.try(:admin?) || current_user == @user %>
+<% if current_user == @user %>
   <div class="center">
-    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn" %>
+    <h3 class="center">
+      My Profile
+    </h3>
+    <%= link_to "Add A Parking Pass", new_parking_pass_path, class: "btn-large waves-effect waves-light" %>
   </div>
-<% end %>
+<% else %>
+  <h1 class="center-align">
+    <%= @user.first_name %> <%= @user.last_name %>'s Profile
+  </h1>
+  <% end %>
+<hr>
 </br>
 <h5 class="center-align"><%= @user.first_name %>'s owned Parking Passes:</h5>
-<hr>
   <% @user.parking_passes.each do |parking_pass| %>
-    </br>
-    <div class="center-align"><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn-large" %></div>
-    <ul class= "center-align">
+    <div class="col s6 center-align"><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn waves-effect waves-light" %></div>
+    <ul class= "col s6 center-align">
       <li>Pass Number: <%= parking_pass.pass_number%></li>
       <li>Price Per Hour: <%= parking_pass.price_per_hour%></li>
       <li>Latitude: <%= parking_pass.lat %></li>
@@ -20,7 +23,7 @@
     </ul>
     <% if current_user.try(:admin?) || current_user == @user %>
       <div class="center-align">
-        <%= link_to "Edit Parking Pass", edit_parking_pass_path, class: "btn", id: "edit" %>
+        <%= link_to "Edit Parking Pass", edit_parking_pass_path(parking_pass), class: "btn", id: "edit" %>
         <%= link_to "Delete Parking Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn", id: "delete" %>
       </div></br>
     <% end %>

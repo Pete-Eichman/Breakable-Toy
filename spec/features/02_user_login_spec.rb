@@ -21,7 +21,7 @@ feature "As an unauthenticated user, I can log in" do
       check("Remember me")
       click_button("Sign in")
 
-      expect(page).to have_content("Signed in as #{user.email}")
+      expect(page).to have_content("My Profile")
       expect(page).to_not have_content("Login Email")
       expect(page).to_not have_field("Login Email")
       expect(page).to_not have_content("Login Password")
