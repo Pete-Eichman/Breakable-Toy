@@ -10,7 +10,9 @@ class ParkingPass < ApplicationRecord
 
   validates :pass_number, presence: true, allow_blank: false
   validates :address, presence: true, allow_blank: false
-  validates :price_per_hour, presence: true, allow_blank: false
+  validates :price_per_hour, presence: true, allow_blank: false, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ },
+  :numericality => {:greater_than_or_equal_to => 0.01, :less_than => 10}
+
 
   def geolocate
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=#{ENV['GOOGLE_MAPS_KEY']}"
