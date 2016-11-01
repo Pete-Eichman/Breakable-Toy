@@ -223,7 +223,6 @@
         null,
         null,
         0,
-        0,
         null,
         null,
         0,
@@ -301,10 +300,10 @@
         0,
         0,
         0,
+        0,
         null,
         0,
         0,
-        null,
         null,
         null,
         null,
@@ -439,7 +438,6 @@
         0,
         0,
         0,
-        0,
         0
       ],
       "/Users/Pete/challenges/breakable-toy-final/app/controllers/callbacks_controller.rb": [
@@ -461,6 +459,6 @@
         0
       ]
     },
-    "timestamp": 1477685488
+    "timestamp": 1478025317
   }
 }

@@ -1,7 +1,7 @@
 class ParkingPassesController < ApplicationController
 
   def index
-    @parking_passes = ParkingPass.all.order(created_at: :desc)
+    @parking_passes = ParkingPass.all
     render json: @parking_passes.to_json
   end
 
@@ -39,16 +39,16 @@ class ParkingPassesController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     @parking_pass = ParkingPass.find(params[:id])
-    if authorized_party
-      if @parking_pass.save
-        flash[:success] = "Parking Pass was Updated!"
-        redirect_to parking_pass_path(@parking_pass)
-      else
-        flash[:error] = "Parking Pass could not be Updated"
-        render parking_pass_path(@parking_pass)
-      end
+    @parking_pass.address = params[:parking_pass][:address]
+    @parking_pass.pass_number = params[:parking_pass][:pass_number]
+    @parking_pass.price_per_hour  = params[:parking_pass][:price_per_hour]
+    if @parking_pass.save
+      flash[:success] = "Parking Pass was Updated!"
+      redirect_to parking_pass_path(@parking_pass)
+    else
+      flash[:error] = "Parking Pass could not be Updated"
+      render parking_pass_path(@parking_pass)
     end
   end
 

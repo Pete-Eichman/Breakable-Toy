@@ -15,7 +15,6 @@ class Booking < ApplicationRecord
     @host = User.find(parking_pass[:user_id])
 
     # Don't send the message if we have more than one or we aren't being forced
-    binding.pry
     if @host.pending_bookings.length > 1 or !force
       return
     else

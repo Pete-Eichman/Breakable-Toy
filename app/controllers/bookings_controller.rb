@@ -20,7 +20,6 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.user = @user
 
-    binding.pry
     if @booking.save
       flash[:notice] = 'Sending your booking request now.'
       @booking.notify_host(true)

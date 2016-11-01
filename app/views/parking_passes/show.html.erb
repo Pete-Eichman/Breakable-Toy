@@ -2,7 +2,7 @@
 <div class="row center-align">
   <div class="col s8 offset-s2" id="passinfo">
     <h1><%= @parking_pass.address %></h1>
-    <h5>Pass#: <%= @parking_pass.pass_number %></h5>
+    <h5>Pass #: <%= @parking_pass.pass_number %></h5>
     <h5>Price Per Hour: <%= "$#{'%.02f' % @parking_pass.price_per_hour}"  %></h5>
     <h5>Pass Owner: <%= @parking_pass.user.first_name %> <%= @parking_pass.user.last_name %></h5>
   </br>

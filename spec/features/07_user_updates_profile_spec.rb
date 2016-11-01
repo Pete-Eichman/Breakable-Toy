@@ -19,7 +19,6 @@ feature "User updates their profile information" do
       expect(page).to have_content("Current password")
       expect(page).to have_field("Current password")
       expect(page).to have_button("Update")
-      expect(page).to have_button("Cancel my account")
       expect(page).to have_link("Back")
     end
 

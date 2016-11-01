@@ -4,6 +4,8 @@
 body {
   background-color: #b9f6ca;
   color: black;
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  font-size: 1.8rem;
 }
 
 .nav-wrapper {
@@ -18,9 +20,10 @@ body {
 
 #map {
   left: 5%;
-  height: 80%;
-  top: 10%;
+  height: 90%;
+  top: 6%;
   width: 90%;
+  font-size: 2rem;
 
 }
 
@@ -29,18 +32,18 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 #floating-panel {
   position: absolute;
-  top: 11%;
+  top: 10%;
   z-index: 5;
-  left: 21%;
-  width: 61%;
+  left: 15%;
+  width: 70%;
   background-color: #b9f6ca;
   color: black;
   text-align: center;
   font-family: 'Roboto','sans-serif';
   line-height: 35px;
-  padding-left: 10px;
 
   #address {
     width: 40rem;
@@ -51,10 +54,18 @@ html, body {
 }
 .text_area{
   color: black;
+  font-size: 2rem;
 }
 
 .btn {
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
+  width: 40%;
+  height: 100%;
+  font-size: 1rem;
+}
+.btn-large {
+  font-size: 5rem;
+  width: 80%;
 }
 
 .btn:hover {
@@ -77,22 +88,104 @@ html, body {
 
 #userpasses {
   background-color: #00e5ff;
-  border: 2px solid #ffffff;
-  border-radius: 25px
+  border: 3px solid #ffffff;
+  border-radius: 25px;
 }
 
 #userbookings {
   background-color: #00e5ff;
-  border: 2px solid #ffffff;
-  border-radius: 25px
+  border: 3px solid #ffffff;
+  border-radius: 25px;
 }
 
 #passinfo {
   background-color: #00e5ff;
-  border: 2px solid #ffffff;
-  border-radius: 25px
+  border: 3px solid #ffffff;
+  border-radius: 25px;
+}
+
+#edituser {
+  background-color: #00e5ff;
+  border: 3px solid #ffffff;
+  border-radius: 25px;
 }
 
 #form {
   background-color: #00e5ff;
+}
+
+.search_text {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#sign_in {
+  background-color: #fff9c4;
+  border: 3px solid #ffffff;
+  border-radius: 25px;
+  font-size: 2rem;
+}
+
+.search_label {
+  font-size: 2rem;
+}
+
+#user_email {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#user_password {
+  font-size: 2rem;
+  text-align: center;
+}
+
+label {
+  font-size: 2rem;
+}
+
+nav {
+  font-size: 2rem;
+  height: 9%;
+}
+
+#parking_pass_pass_number {
+  font-size: 2rem;
+  text-align: center;
+}
+#parking_pass_address {
+  font-size: 2rem;
+  text-align: center;
+}
+#parking_pass_price_per_hour {
+  font-size: 2rem;
+  text-align: center;
+}
+#remember {
+  font-size: 2rem;
+}
+#booking_first_name {
+  font-size: 2rem;
+  text-align: center;
+}
+#booking_last_name {
+  font-size: 2rem;
+  text-align: center;
+}
+#booking_phone_number {
+  font-size: 2rem;
+  text-align: center;
+}
+#booking_start_time {
+  font-size: 2rem;
+  text-align: center;
+}
+#booking_end_time {
+  font-size: 2rem;
+  text-align: center;
+}
+#booking_date {
+  font-size: 2rem;
+  text-align: center;
 }

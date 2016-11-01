@@ -1,7 +1,16 @@
-<div id="floating-panel">
-  <input id="address" type="textbox" value=" ">
-  <input class="btn waves-effect waves-light" id="submit" type="button" value="Search">
-</div>
+<html>
+   <head>
+     <title>BreakableToyFinal</title>
+     <%= csrf_meta_tags %>
+     <%= stylesheet_link_tag    'application', media: 'all' %>
+     <%= javascript_include_tag 'application' %>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   </head>
+   <body>
+     <div id="floating-panel">
+       <input id="address" type="textbox" value=" ">
+       <input class="btn waves-effect waves-light" id="submit" type="button" value="Search">
+     </div>
 <div id="map"></div>
 <script>
   $( document ).ready(function(){
@@ -35,19 +44,16 @@
       })
     });
   })
-
   function initMap() {
     window.map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-      center: {lat: 42.3600825, lng: -71.0588801}
+      zoom: 19,
+      center: {lat: 42.3515662, lng: -71.0613815}
     });
     var geocoder = new google.maps.Geocoder();
-
     document.getElementById('submit').addEventListener('click', function() {
       geocodeAddress(geocoder, window.map);
     });
   }
-
   function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('address').value;
     geocoder.geocode({'address': address}, function(results, status) {
@@ -75,3 +81,5 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&callback=initMap">
 </script>
+  </body>
+</html>
