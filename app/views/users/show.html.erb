@@ -21,7 +21,7 @@
     <h5><%= @user.first_name %>'s owned Parking Passes:</h5>
       <% @user.parking_passes.each do |parking_pass| %>
         <hr>
-        <div><%= link_to "#{parking_pass.address}", parking_pass_path, class: "btn waves-effect waves-light waves-effect waves-light" %></div>
+        <div><%= link_to "#{parking_pass.address}", parking_pass_path(parking_pass), class: "btn waves-effect waves-light waves-effect waves-light" %></div>
         <ul>
           <li>Pass Number: <%= parking_pass.pass_number%></li>
           <li>Price Per Hour: <%= "$ #{'%.02f' % parking_pass.price_per_hour}"  %> </li>
