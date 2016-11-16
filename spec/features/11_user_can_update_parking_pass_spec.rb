@@ -29,7 +29,7 @@ feature "User Updates parking pass info" do
       expect(page).to have_content "35 Harrison Ave Boston MA"
       expect(page).to have_content "Pass #: 33"
       expect(page).to have_content "Price Per Hour: $2.00"
-      expect(page).to have_content "Pass Owner: #{user.first_name}"
+      expect(page).to have_content "Pass Owner: #{user.first_name} #{user.last_name}"
     end
   end
 end
