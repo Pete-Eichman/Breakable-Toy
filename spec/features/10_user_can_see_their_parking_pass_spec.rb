@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User visits profile page" do
+feature "User visits profile page and sees their parking pass" do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:parking_pass) { FactoryGirl.create(:parking_pass, user: user) }
   before { login_as(user, scope: :user) }
@@ -20,14 +20,6 @@ feature "User visits profile page" do
 
       expect(page).to have_content "Bookings:"
       expect(page).to have_link "Create a Booking"
-    end
-    scenario "I can click a link to bring me to my parking pass edit page" do
-      visit root_path
-      click_link "My Profile"
-      click_link "Edit Parking Pass"
-
-      expect(page).to have_button "Update Parking Pass"
-      expect(page).to have_field "parking_pass[pass_number]"
     end
     scenario "I can click a link to delete my parking pass" do
       visit root_path
