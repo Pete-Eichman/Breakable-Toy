@@ -2,8 +2,7 @@
   <div class = "center-align">
     <div>
       <h1>Edit Parking Pass</h1>
-      <h5>Pass Number: <%= @parking_pass.pass_number %></h2>
-      <h5>Address: <%= @parking_pass.address %></h2>
+      <hr>
     </div>
     <div class = "col s6 offset-s3" id="sign_in">
       <%= form_for :parking_pass, method: :patch, url: parking_pass_path(@parking_pass) do |f| %>
@@ -17,7 +16,7 @@
         <%= f.label :price_per_hour, class: "new_parking_pass_label" %>
         <%= f.text_area :price_per_hour, class: "text_area" %>
 
-      <div class="center"></br><%= f.submit "Update Parking Pass", class: "btn" %></div>
+      <div class="center"></br><%= f.submit "Update", class: "btn" %></div>
       <% end %>
     </div>
   </div>

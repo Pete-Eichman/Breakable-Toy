@@ -30,10 +30,10 @@
         </ul>
         <% if current_user.try(:admin?) || current_user == @user %>
           <div>
-            <%= link_to "Edit Parking Pass", edit_parking_pass_path(parking_pass), class: "btn waves-effect waves-light", id: "edit" %>
+            <%= link_to "Edit Pass", edit_parking_pass_path(parking_pass), class: "btn waves-effect waves-light", id: "edit" %>
           </div>
           <div></br>
-            <%= link_to "Delete Parking Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
+            <%= link_to "Delete Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
           </div></br>
         <% end %>
       <% end %>
