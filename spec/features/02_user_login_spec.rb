@@ -23,8 +23,8 @@ feature "As an unauthenticated user, I can log in" do
 
       expect(page).to have_link("My Profile")
       expect(page).to have_link("Sign Out")
-      expect(page).to have_link("Search Your Destination")
-      expect(page).to have_content("To find private parking passes you want to rent, simply click 'Search Your Destination'.")
+      expect(page).to have_link("Search For Parking")
+      expect(page).to have_content("To find private parking passes you want to rent, simply click 'Search For Parking'.")
       expect(page).to_not have_content("Login Email")
       expect(page).to_not have_field("Login Email")
       expect(page).to_not have_content("Login Password")

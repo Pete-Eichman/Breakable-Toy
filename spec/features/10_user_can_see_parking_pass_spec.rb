@@ -29,7 +29,7 @@ feature "User visits profile page and sees their parking pass" do
       expect(page).to have_content "Parking Pass was deleted!"
       expect(page).to have_link "My Profile"
       expect(page).to have_link "Sign Out"
-      expect(page).to have_link "Search Your Destination"
+      expect(page).to have_link "Search For Parking"
       expect(page).to have_link "Edit User Account"
       expect(page).to have_link "Add Parking Pass"
       expect(page).to have_link "Delete User Account"

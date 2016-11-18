@@ -24,7 +24,7 @@ feature "User can create a parking pass" do
       expect(page).to have_content "#{user.parking_passes[0].pass_number}"
       expect(page).to have_content "#{user.parking_passes[0].address}"
     end
-    scenario "User fills forms incorrectly" do
+    scenario "User enters unmappable address" do
       click_link "My Profile"
       click_link "Add Parking Pass"
       fill_in("Pass number", with: "S1234567")

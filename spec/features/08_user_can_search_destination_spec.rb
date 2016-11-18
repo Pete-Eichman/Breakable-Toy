@@ -8,7 +8,7 @@ feature "User visits the map page" do
       login_as(users[1], scope: :user)
       visit maps_path
 
-      click_link("Search Your Destination")
+      click_link("Search For Parking")
       parent = page.find('div#floating-panel')
 
       expect(parent).to have_css('#submit')
