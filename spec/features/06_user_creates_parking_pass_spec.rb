@@ -6,6 +6,22 @@ feature "User can create a parking pass" do
   before { visit root_path }
 
   context "As an authenticated user I can click a link to add a parking pass" do
+    scenario "User clicks Add Parking Pass button to navigate to new parking pass page" do
+      click_link("My Profile")
+      click_link("Add Parking Pass")
+
+      expect(page).to have_link "My Profile"
+      expect(page).to have_link "Sign Out"
+      expect(page).to have_link "Search For Parking"
+      expect(page).to have_content "Add A Parking Pass"
+      expect(page).to have_content "Pass number"
+      expect(page).to have_content "Address"
+      expect(page).to have_content "Price per hour"
+      expect(page).to have_button "Create Pass"
+      expect(page).to have_field "parking_pass[pass_number]"
+      expect(page).to have_field "parking_pass[address]"
+      expect(page).to have_field "parking_pass[price_per_hour]"
+    end
     scenario "User fills forms correctly" do
       click_link("My Profile")
       click_link("Add Parking Pass")

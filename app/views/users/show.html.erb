@@ -7,8 +7,9 @@
     <%= link_to "Edit User Account", edit_user_registration_path, class: "btn waves-effect waves-light", id: "edit" %>
     <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
     <hr>
-    </div>
     </br>
+    <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
+    </div>
   </div>
 <% else %>
   </br>
@@ -23,7 +24,6 @@
 </br>
 <div class="row center">
   <div class = "col s6 offset-s3" id = "userpasses">
-    <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
     <h5><%= @user.first_name %>'s owned Parking Passes:</h5>
       <% @user.parking_passes.each do |parking_pass| %>
       <div id ="list"><br>

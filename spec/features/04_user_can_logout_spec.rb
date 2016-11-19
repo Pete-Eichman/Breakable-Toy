@@ -11,6 +11,8 @@ feature "User can logout" do
 
       expect(page).to_not have_content("Signed in as")
       expect(page).to_not have_content("Signed in successfully.")
+      expect(page).to have_content "Welcome to ParkMe!"
+      expect(page).to have_content "Please Sign In Below:"
       expect(page).to have_content("Signed out successfully.")
       expect(page).to have_content("Login Email")
       expect(page).to have_field("Login Email")
@@ -20,6 +22,7 @@ feature "User can logout" do
       expect(page).to have_link("Forgot your password?")
       expect(page).to have_link("Sign up")
       expect(page).to have_content("Remember me")
+      expect(page).to have_link "Sign in with Facebook"
     end
   end
 end
