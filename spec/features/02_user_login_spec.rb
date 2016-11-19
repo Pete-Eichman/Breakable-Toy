@@ -23,8 +23,8 @@ feature "As an unauthenticated user, I can log in" do
 
       expect(page).to have_link("My Profile")
       expect(page).to have_link("Sign Out")
-      expect(page).to have_link("Search Your Destination")
-      expect(page).to have_content("To find private parking passes you want to rent, simply click 'Search Your Destination'.")
+      expect(page).to have_link("Search For Parking")
+      expect(page).to have_content("To find private parking passes you want to rent, simply click 'Search For Parking'.")
       expect(page).to_not have_content("Login Email")
       expect(page).to_not have_field("Login Email")
       expect(page).to_not have_content("Login Password")
@@ -40,8 +40,8 @@ feature "As an unauthenticated user, I can log in" do
       check("Remember me")
       click_button("Sign in")
 
-      expect(page).to have_content("You must create an account to sign in.")
-      expect(page).to have_content("Sign up")
+      expect(page).to have_content("You must sign in with an existing account, or create an account to sign in.")
+      expect(page).to have_content("Sign Up")
       expect(page).to have_content("First name")
       expect(page).to have_field("First name")
       expect(page).to have_content("Last name")
@@ -54,7 +54,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_field("Password")
       expect(page).to have_content("Password confirmation")
       expect(page).to have_field("Password confirmation")
-      expect(page).to have_button("Sign up")
+      expect(page).to have_button("Sign Up")
     end
 
     scenario "User attempts to log in with an incorrect password" do
@@ -68,7 +68,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_content("Password")
       expect(page).to have_field("Password")
       expect(page).to have_button("Sign in")
-      expect(page).to have_button("Sign up")
+      expect(page).to have_link("Sign up")
       expect(page).to have_link("Forgot your password?")
       expect(page).to have_content("Remember me")
     end

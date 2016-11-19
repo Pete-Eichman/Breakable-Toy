@@ -22,7 +22,7 @@ class ParkingPassesController < ApplicationController
     if current_user
       @parking_pass = ParkingPass.new(parking_pass_params)
       if @parking_pass.geolocate['results'][0].nil?
-        flash[:errors] = "Parking Pass could not be mapped"
+        flash[:errors] = "Parking Pass could not be mapped, please enter a valid address."
         render :new
       else
         @parking_pass.lat = @parking_pass.geolocate['results'][0]['geometry']['location']['lat']
@@ -43,12 +43,16 @@ class ParkingPassesController < ApplicationController
     @parking_pass.address = params[:parking_pass][:address]
     @parking_pass.pass_number = params[:parking_pass][:pass_number]
     @parking_pass.price_per_hour  = params[:parking_pass][:price_per_hour]
-    if @parking_pass.save
+
+    if @parking_pass.geolocate['results'][0].nil?
+      flash[:errors] = "Parking Pass could not be mapped, please enter a valid address."
+      render :edit
+    else
+      @parking_pass.lat = @parking_pass.geolocate['results'][0]['geometry']['location']['lat']
+      @parking_pass.lng = @parking_pass.geolocate['results'][0]['geometry']['location']['lng']
+      @parking_pass.save
       flash[:success] = "Parking Pass was Updated!"
       redirect_to parking_pass_path(@parking_pass)
-    else
-      flash[:error] = "Parking Pass could not be Updated"
-      render parking_pass_path(@parking_pass)
     end
   end
 
