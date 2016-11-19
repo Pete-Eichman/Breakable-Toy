@@ -13,6 +13,7 @@ feature "User visits profile page" do
       expect(page).to have_link "Add Parking Pass"
       expect(page).to have_link "Edit User Account"
       expect(page).to have_link "Delete User Account"
+      expect(page).to have_content "#{users[0].first_name}'s Profile"
       expect(page).to have_content "#{users[0].first_name}'s owned Parking Passes:"
       expect(page).to have_content "#{users[0].first_name}'s Bookings:"
     end
