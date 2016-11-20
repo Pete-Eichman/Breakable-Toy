@@ -1,4 +1,4 @@
-<% if current_user == @user %>
+<% if current_user == @user || current_user.try(:admin?) %>
   <div class="row center-align">
     <div class="col s8 offset-s2">
     <h1>
@@ -8,19 +8,21 @@
     <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
     <hr>
     </br>
-    <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
-    </div>
-  </div>
+    <% if current_user == @user %>
+      <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
+    <% end %>
 <% else %>
-  </br>
-  <div class="row center-align">
-    <div class="col s6 offset-s3" id = "userpasses">
-      <h1>
-        <%= @user.first_name %> <%= @user.last_name %>'s Profile
-      </h1>
-    </div>
   </div>
-  <% end %>
+</div>
+  </br>
+<div class="row center-align">
+  <div class="col s6 offset-s3" id = "userpasses">
+    <h1>
+      <%= @user.first_name %> <%= @user.last_name %>'s Profile
+    </h1>
+  </div>
+</div>
+<% end %>
 </br>
 <div class="row center">
   <div class = "col s6 offset-s3" id = "userpasses">
