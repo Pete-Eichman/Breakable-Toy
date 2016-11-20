@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature "User updates their profile information" do
-  let!(:user) { FactoryGirl.create(:user, password: "pass01", password_confirmation: "pass01") }
-  before { login_as(user, scope: :user) }
+  let!(:users) { FactoryGirl.create_list(:user, 2) }
+  before { login_as(users[0], scope: :user) }
 
   context "As an authenticated user on my profile page" do
     scenario "I can click a link to view my account edit page" do
@@ -29,10 +29,17 @@ feature "User updates their profile information" do
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass02")
       fill_in("Password confirmation", with: "pass02")
-      fill_in("Current password", with: "pass01")
+      fill_in("Current password", with: "#{users[0].password}")
       click_button "Update"
 
       expect(page).to have_content "Your account has been updated successfully"
+    end
+  end
+  context "As a non-admin user on another user's page" do
+    scenario "I cannot see a link to edit the user's page" do
+      visit user_path(users[1])
+
+      expect(page).to_not have_link "Edit User Account"
     end
   end
 end

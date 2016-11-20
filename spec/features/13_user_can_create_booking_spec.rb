@@ -1,19 +1,15 @@
 require 'rails_helper'
 
-feature "User visits profile page" do
+feature "User can book a parking pass" do
   let!(:users) { FactoryGirl.create_list(:user, 2) }
   let!(:parking_pass) { FactoryGirl.create(:parking_pass, user: users[1]) }
   before { login_as(users[0], scope: :user) }
-  context "As a user" do
-    scenario "I can click a link to bring me to the create booking page" do
-      visit user_path(users[1])
-      click_link "#{parking_pass.address}"
+  context "An authenticated user who has visited a parking pass page" do
+    scenario "User click the Create a Booking link and sees the new booking page" do
+      visit parking_pass_path(parking_pass)
       click_link "Create a Booking"
-      save_and_open_page
 
-      expect(page).to have_link "My Profile"
-      expect(page).to have_link "Sign Out"
-      expect(page).to have_link "Search For Parking"
+
       expect(page).to have_content "First name"
       expect(page).to have_field "booking[first_name]"
       expect(page).to have_content "Last name"
@@ -27,6 +23,20 @@ feature "User visits profile page" do
       expect(page).to have_content "Date"
       expect(page).to have_field "booking[date]"
       expect(page).to have_button "Create Booking"
+    end
+  end
+  context "As an authenticated user who has visited the Booking page" do
+    scenario "User successfully creates a booking" do
+      visit parking_pass_path(parking_pass)
+      click_link "Create a Booking"
+      fill_in("booking[first_name]", with: "#{users[0].first_name}")
+      fill_in("booking[last_name]", with: "#{users[0].last_name}")
+      fill_in("booking[phone_number]", with: "#{users[0].phone_number}")
+      fill_in("booking[start_time]", with: "12:00 PM")
+      fill_in("booking[end_time]", with: "4:00 PM")
+      fill_in("booking[date]", with: "01/20/2017")
+      click_button "Create Booking"
+
     end
   end
 end
