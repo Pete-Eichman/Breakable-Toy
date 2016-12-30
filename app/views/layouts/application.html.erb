@@ -14,23 +14,23 @@
         <div class="nav-wrapper">
           <div>
             <div class="left">
-              <i class="material-icons left">
+              <i class="material-icons left" id="person_pin">
                 person_pin
               </i>
               <%= link_to "My Profile", user_path(current_user)%>
             </div>
             <div class="col s6 right">
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-              <i class="material-icons right">
+              <i class="material-icons right" id= "power_off">
                 power_settings_new
               </i>
             </div>
-        <div class="center">
-          <%= link_to "Search For Parking", maps_path %>
+            <div class="center">
+              <%= link_to "Search For Parking", maps_path %>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </nav>
+      </nav>
     <% else%>
       <% if controller_name != "sessions" && action_name != "new" %>
         <% if controller_name != "registrations"%>
@@ -46,18 +46,17 @@
       <% end %>
     <% end %>
   </div>
-  </nav>
-    <div>
-      <% if flash[:notice] %>
-        <p class="center-align"><%= flash[:notice] %></p>
-      <% end %>
-      <% if flash[:success] %>
-        <p class="center-align"><%= flash[:success] %></p>
-      <% end %>
-      <% if flash[:errors] %>
-        <p class="center-align"><%= flash[:errors] %></p>
-      <% end %>
-    </div>
-    <%= yield %>
+  <div class="center-align">
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:success] %>
+      <p><%= flash[:success] %></p>
+    <% end %>
+    <% if flash[:errors] %>
+      <p><%= flash[:errors] %></p>
+    <% end %>
+  </div>
+  <%= yield %>
   </body>
 </html>
