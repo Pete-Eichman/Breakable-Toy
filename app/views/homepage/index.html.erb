@@ -1,14 +1,24 @@
 <% if current_user %>
-  <h1 class='center-align'>Welcome To ParkMe!</h1><hr></br>
-  <div class='row'>
-    <div class='col s6 offset-s3' id="sign_in">
-      </br>
-      <li>To find private parking passes you want to rent, simply click 'Search For Parking'.</li></br>
-      <li>Then, type in your destination to see the nearby parking passes.</li></br>
-      <li>Hover your cursor over the pin to see the price, or click the pin to see more details.</li></br>
-      <li>From there, you'll be able to start the booking request process.</li></br>
-    </div>
+<h1 class='center-align'>ParkMe!</h1></br>
+<div class='row'>
+  <div class='col s6 offset-s3' id="sign_in">
+    <li>To find private parking passes you want to rent, simply click 'Search For Parking'.</li></br>
+    <li>Then, type in your destination to see the nearby parking passes.</li></br>
+    <li>Hover your cursor over the pin to see the price, or click the pin to see more details.</li></br>
+    <li>From there, you'll be able to start the booking request process.</li></br>
   </div>
-  <h1 class='center-align'>Enjoy!</h1>
+</div>
 <% else %>
+  <% if controller_name != "sessions" && action_name != "new" %>
+    <% if controller_name != "registrations"%>
+      <% if action_name != "new" || action_name != "show" %>
+        <div class='row valign'>
+          <div class="center-align">
+            <h1>ParkMe!</h1>
+          </div>
+          <%= render "layouts/sign_in_form" %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

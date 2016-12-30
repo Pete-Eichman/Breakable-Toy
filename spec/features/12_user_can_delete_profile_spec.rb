@@ -10,7 +10,7 @@ feature "User visits profile page and deletes their profile" do
       click_link "Delete User Account"
 
       expect(page).to have_content "User Account successfully deleted."
-      expect(page).to have_content "Welcome to ParkMe!"
+      expect(page).to have_content "ParkMe!"
       expect(page).to have_content "Please Sign In Below:"
       expect(page).to have_field "user[email]"
       expect(page).to have_field "user[password]"
