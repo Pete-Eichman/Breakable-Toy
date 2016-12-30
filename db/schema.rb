@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20161028001321) do
     t.string   "last_name",                              null: false
     t.integer  "parking_pass_id"
     t.boolean  "admin",                  default: false
-    t.boolean  "owner",                  default: false
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
