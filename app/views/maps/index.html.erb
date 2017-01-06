@@ -1,17 +1,19 @@
 <html>
    <head>
-     <title>BreakableToyFinal</title>
+     <title>ParkMe!</title>
      <%= csrf_meta_tags %>
      <%= stylesheet_link_tag    'application', media: 'all' %>
      <%= javascript_include_tag 'application' %>
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    </head>
    <body>
-     <div id="floating-panel" class= "center-align">
+      <h3 class="center">Enter Your Destination Address</h3>
+      <div id="floating-panel" class= "center">
        <input id="address" type="textbox" value=" ">
-       <input class="btn" id="submit" type="button" value="Park!">
-     </div>
-<div id="map"></div>
+       <input class="waves-effect waves-teal btn-flat" id="submit" type="button" value="Park!">
+      </div>
+    <div id="map"></div>
+
 <script>
   $( document ).ready(function(){
     $('#submit').on('click', function (){
