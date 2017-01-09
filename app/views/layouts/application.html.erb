@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BreakableToyFinal</title>
+    <title>ParkMe!</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script>
+      $( document ).ready(function(){
+        $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrainWidth: false, // Does not change width of dropdown to that of the activator
+          hover: false, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: false, // Displays dropdown below the button
+          alignment: 'left' // Displays dropdown with edge aligned to the left of button
+          stopPropagation: false // Stops event propagation
+        });
+      })
+    </script>
   </head>
   <body>
     <% if current_user %>
@@ -14,10 +28,10 @@
         <div class="nav-wrapper">
           <div>
             <div class="left">
-              <ul id="dropdown1" class="dropdown-content">
-                <li><%= link_to "Edit User Account", edit_user_registration_path, class: "btn waves-effect waves-light", id: "edit" %></li>
-              </ul>
-              <a class="dropdown-button" href="#" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+              <i class="material-icons left" id="person_pin">
+                person_pin
+              </i>
+              <%= link_to "My Profile", user_path(current_user)%>
             </div>
           <div class="col s6 right">
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -44,7 +58,6 @@
         <p><%= flash[:errors] %></p>
       <% end %>
     </div>
-    <script src="dropdown.js"></script>
   <%= yield %>
   </body>
 </html>

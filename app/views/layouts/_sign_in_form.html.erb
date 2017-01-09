@@ -23,15 +23,19 @@
           </br>
             <%= link_to "Forgot your password?", new_user_password_path(:user), id: "top_link", class: "btn-small" %>
           </div>
+        </br>
           <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn-large waves-effect waves-light"  %>
+        </br></br>
         </div>
       </div>
+      </br>
       <hr>
     <h3 class='center-align'>OR</h3>
     <div class='row center-align'>
       <div class='col s4 offset-s4'>
-        <%= image_tag("facebook.png", :alt => "facebook icon") %>
-        <%= link_to "Join with Facebook", user_facebook_omniauth_authorize_path, class: "btn-large waves-effect waves-light"  %>
+        <h5>Connect with Facebook</h5>
+        <%= link_to image_tag("/assets/images/facebook.png"), user_facebook_omniauth_authorize_path %>
+      </div>
     </div>
     <% end %>
     <% end %>

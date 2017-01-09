@@ -18,7 +18,7 @@ feature "User visits profile page and deletes their profile" do
       expect(page).to have_link "Forgot your password?"
       expect(page).to have_content "OR"
       expect(page).to have_link "Sign up"
-      expect(page).to have_link "Sign in with Facebook"
+      expect(page).to have_content "Connect with Facebook"
     end
   end
   context "As a non-admin user on another users profile page" do
