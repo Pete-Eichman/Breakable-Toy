@@ -6,8 +6,7 @@
     </h1>
     <%= link_to "Edit User Account", edit_user_registration_path, class: "btn waves-effect waves-light", id: "edit" %>
     <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
-    <hr>
-    </br>
+  </br></br>
     <% if current_user == @user %>
       <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
     <% end %>

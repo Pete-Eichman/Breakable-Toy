@@ -11,7 +11,7 @@ feature "As an unregistered user, I can create an account" do
       click_link("Sign up")
 
       expect(page).to_not have_content("Log In")
-      expect(page).to_not have_content("Welcome to ParkMe!")
+      expect(page).to_not have_content("ParkMe!")
       expect(page).to have_content("Sign Up")
       expect(page).to have_content("First name")
       expect(page).to have_field("First name")

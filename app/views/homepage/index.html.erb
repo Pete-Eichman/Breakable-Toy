@@ -1,14 +1,49 @@
 <% if current_user %>
-  <h1 class='center-align'>Welcome To ParkMe!</h1><hr></br>
-  <div class='row'>
-    <div class='col s6 offset-s3' id="sign_in">
+<h1 class='center-align'>ParkMe!</h1>
+<div class='row'>
+  <div class='col s12'>
+    <div class='col s4 push-s1' id="outline">
+      <h3 class='center-align'>Find Parking</h3>
+      <hr>
+      <div class='row'>
+        <div class='col s10 offset-s1' id="sign_in">
+          <li>Click 'Search For Parking'.</li></br>
+          <li>Enter the destination.</li></br>
+          <li>Click pins to see more.</li></br>
+          <li>Request to book the pass.</li>
+        </div>
+      </div>
       </br>
-      <li>To find private parking passes you want to rent, simply click 'Search For Parking'.</li></br>
-      <li>Then, type in your destination to see the nearby parking passes.</li></br>
-      <li>Hover your cursor over the pin to see the price, or click the pin to see more details.</li></br>
-      <li>From there, you'll be able to start the booking request process.</li></br>
+    </div>
+    <div class='col s4 push-s3' id="outline">
+      <h3 class='center-align'>Rent Your Parking Space</h3>
+      <hr>
+      <div class='row'>
+        <div class='col s10 offset-s1' id="sign_in">
+          <li>Click 'My Profile'.</li></br>
+          <li>Click 'Add Parking Pass'.</li></br>
+          <li>Fill out the form.</li></br>
+          <li>Click the 'Create Pass'.</li>
+        </div>
+      </div>
+    </br>
     </div>
   </div>
-  <h1 class='center-align'>Enjoy!</h1>
+  <div class='row'>
+
+  </div>
+</div>
 <% else %>
+  <% if controller_name != "sessions" && action_name != "new" %>
+    <% if controller_name != "registrations"%>
+      <% if action_name != "new" || action_name != "show" %>
+        <div class='row valign'>
+          <div class="center-align">
+            <h1>ParkMe!</h1>
+          </div>
+          <%= render "layouts/sign_in_form" %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
