@@ -21,7 +21,7 @@ feature "User visits profile page" do
 
       expect(page).to have_link "My Profile"
       expect(page).to have_link "Sign Out"
-      expect(page).to have_link "Search For Parking"
+      expect(page).to have_link "Find Parking"
       expect(page).to have_content "#{users[1].first_name} #{users[1].last_name}'s Profile"
       expect(page).to have_content "#{users[1].first_name}'s owned Parking Passes:"
       expect(page).to have_content "#{users[1].first_name}'s Bookings:"
