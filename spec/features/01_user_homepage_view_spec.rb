@@ -5,15 +5,14 @@ feature "User visits the home page" do
     scenario "I can view the home page" do
       visit '/'
 
-      expect(page).to have_content "Welcome to ParkMe!"
+      expect(page).to have_content "ParkMe!"
       expect(page).to have_content "Please Sign In Below:"
       expect(page).to have_field "user[email]"
       expect(page).to have_field "user[password]"
       expect(page).to have_button "Sign in"
-      expect(page).to have_link "Forgot your password?"
-      expect(page).to have_content "OR"
+      expect(page).to have_link "Forgot password?"
       expect(page).to have_link "Sign up"
-      expect(page).to have_link "Sign in with Facebook"
+      expect(page).to have_content "Connect with Facebook"
     end
   end
 end

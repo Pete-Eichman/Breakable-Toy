@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BreakableToyFinal</title>
+    <title>ParkMe!</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script>
+      $( document ).ready(function(){
+        $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrainWidth: false, // Does not change width of dropdown to that of the activator
+          hover: false, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: false, // Displays dropdown below the button
+          alignment: 'left' // Displays dropdown with edge aligned to the left of button
+          stopPropagation: false // Stops event propagation
+        });
+      })
+    </script>
   </head>
-
   <body>
     <% if current_user %>
       <nav>
@@ -19,44 +33,31 @@
               </i>
               <%= link_to "My Profile", user_path(current_user)%>
             </div>
-            <div class="col s6 right">
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-              <i class="material-icons right" id= "power_off">
-                power_settings_new
-              </i>
-            </div>
-            <div class="center">
-              <%= link_to "Search For Parking", maps_path %>
-            </div>
+          <div class="col s6 right">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            <i class="material-icons right" id= "power_off">
+              power_settings_new
+            </i>
+          </div>
+          <div class="center">
+            <%= link_to "Find Parking", maps_path %>
           </div>
         </div>
-      </nav>
-    <% else%>
-      <% if controller_name != "sessions" && action_name != "new" %>
-        <% if controller_name != "registrations"%>
-          <% if action_name != "new" || action_name != "show" %>
-            <div class='row valign'>
-              <div class="center-align">
-                <h1>Welcome to ParkMe!</h1>
-              </div>
-              <%= render "layouts/sign_in_form" %>
-            </div>
-          <% end %>
-        <% end %>
+      </div>
+    </nav>
+    <% else %>
+    <% end %>
+    <div class="center-align">
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
       <% end %>
-    <% end %>
-  </div>
-  <div class="center-align">
-    <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:success] %>
-      <p><%= flash[:success] %></p>
-    <% end %>
-    <% if flash[:errors] %>
-      <p><%= flash[:errors] %></p>
-    <% end %>
-  </div>
+      <% if flash[:success] %>
+        <p><%= flash[:success] %></p>
+      <% end %>
+      <% if flash[:errors] %>
+        <p><%= flash[:errors] %></p>
+      <% end %>
+    </div>
   <%= yield %>
   </body>
 </html>

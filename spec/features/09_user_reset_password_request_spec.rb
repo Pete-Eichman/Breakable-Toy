@@ -5,11 +5,11 @@ feature "User can reset password" do
   context "As a user, I forgot my password" do
     scenario "and I see a password reset link " do
 
-      expect(page).to have_link("Forgot your password?")
+      expect(page).to have_link("Forgot password?")
     end
 
     scenario "I can navigate to the password reset form" do
-      click_link "Forgot your password?"
+      click_link "Forgot password?"
 
       expect(page).to have_content("Forgot your password?")
       expect(page).to have_content("Email")

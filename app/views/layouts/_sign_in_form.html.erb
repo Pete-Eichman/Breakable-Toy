@@ -4,36 +4,34 @@
       <%= f.submit "Sign Out", id: "logout_btn", class: 'btn' %>
     <% else %>
       <div class='row center-align'>
-        <h3 class='center-align'> Please Sign In Below: </h3> <hr></br>
-        <div class='col s4 offset-s4' id='sign_in'>
+        <h3 class='center'> Please Sign In Below: </h3></br>
+        <div class='col s6 offset-s3 l4 offset-l4' id='sign_in'>
           <div>
-            <%= f.label :email, "Login Email", class: "search_label" %>
+            <%= f.label :email, "Email", class: "search_label" %>
             <%= f.text_field :email, class: "search_text" %>
           </div>
           <div>
-            <%= f.label :password, "Login Password", class: "search_label" %>
+            <%= f.label :password, "Password", class: "search_label" %>
             <%= f.password_field :password, class: "search_text" %>
           </div>
           <div>
-            <%= f.submit "Sign in", id: "login_btn", class: 'btn' %>
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me, id: "remember" %>
+            <%= f.submit "Sign in", id: "login_btn", class: 'btn' %>
           </div>
           <div>
           </br>
-            <%= link_to "Forgot your password?", new_user_password_path(:user), id: "top_link", class: "btn-small" %>
+            <%= link_to "Forgot password?", new_user_password_path(:user), id: "top_link", class: "btn waves-effect waves-light" %>
           </div>
+          </br>
+          <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn waves-effect waves-light"  %>
+        </br><hr>
+        <h5>Connect with Facebook</h5>
+        <%= link_to image_tag("facebook.png"), user_facebook_omniauth_authorize_path, id: "fb_icon" %>
         </br>
         </div>
       </div>
-<hr>
-    <h3 class='center-align'>OR</h3>
-    <div class='row center-align'>
-      <div class='col s6 offset-s3'>
-        <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn waves-effect waves-light"  %></br></br>
-        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn waves-effect waves-light"  %>
-      </div>
-    </div>
+      </br>
     <% end %>
     <% end %>
   </div>
