@@ -19,7 +19,7 @@ feature "User can logout" do
       expect(page).to have_content("Password")
       expect(page).to have_field("Password")
       expect(page).to have_button("Sign in")
-      expect(page).to have_link("Forgot your password?")
+      expect(page).to have_link("Forgot password?")
       expect(page).to have_link("Sign up")
       expect(page).to have_content("Remember me")
       expect(page).to have_content "Connect with Facebook"

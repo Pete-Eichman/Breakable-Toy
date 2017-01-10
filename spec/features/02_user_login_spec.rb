@@ -10,9 +10,10 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_content("Password")
       expect(page).to have_field("Password")
       expect(page).to have_button("Sign in")
-      expect(page).to have_link("Forgot your password?")
+      expect(page).to have_link("Forgot password?")
       expect(page).to have_link("Sign up")
       expect(page).to have_content("Remember me")
+      expect(page).to have_css("#fb_icon")
     end
 
     scenario "User successfully logs in" do
@@ -33,7 +34,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to_not have_content("Password")
       expect(page).to_not have_field("Password")
       expect(page).to_not have_button("Sign in")
-      expect(page).to_not have_link("Forgot your password?")
+      expect(page).to_not have_link("Forgot password?")
       expect(page).to_not have_content("Remember me")
     end
 
@@ -71,6 +72,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_field("Password")
       expect(page).to have_button("Sign in")
       expect(page).to have_link("Sign up")
+      expect(page).to have_link("Sign in with Facebook")
       expect(page).to have_link("Forgot your password?")
       expect(page).to have_content("Remember me")
     end
