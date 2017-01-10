@@ -12,7 +12,7 @@ feature "User can create a parking pass" do
 
       expect(page).to have_link "My Profile"
       expect(page).to have_link "Sign Out"
-      expect(page).to have_link "Search For Parking"
+      expect(page).to have_link "Find Parking"
       expect(page).to have_content "Add A Parking Pass"
       expect(page).to have_content "Pass number"
       expect(page).to have_content "Address"

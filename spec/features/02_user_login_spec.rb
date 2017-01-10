@@ -28,7 +28,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_link("Sign Out")
       expect(page).to have_css("i#person_pin")
       expect(page).to have_css("i#power_off")
-      expect(page).to have_link("Search For Parking")
+      expect(page).to have_link("Find Parking")
       expect(page).to_not have_content("Email")
       expect(page).to_not have_field("Email")
       expect(page).to_not have_content("Password")
