@@ -23,10 +23,10 @@ html, body {
 
 #map {
   border: 5px solid #000000;
-  left: 10%;
-  height: 75%;
+  left: 12.5%;
+  height: 70%;
   top: 7%;
-  width: 80%;
+  width: 75%;
   font-size: 2rem;
 
 }
@@ -58,6 +58,7 @@ html, body {
 }
 
 .btn {
+  background-color: #29b6f6;
   border: 3px solid #ffffff;
   width: 60%;
   height: 100%;
@@ -90,13 +91,13 @@ html, body {
 }
 
 #userpasses {
-  background-color: #00e5ff;
+  background-color: #a5d6a7;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }
 
-#userbookings {
-  background-color: #00e5ff;
+#list {
+  background-color: #F8F3BF;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }
@@ -198,10 +199,7 @@ nav {
   font-size: 2rem;
   text-align: center;
 }
-#list {
-  background-color: #00e5ff;
-  border: 3px solid #ffffff;
-}
+
 
 #facebook {
   background-image: image-url("facebook.png")
