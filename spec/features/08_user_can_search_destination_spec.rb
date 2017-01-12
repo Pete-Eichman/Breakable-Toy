@@ -13,7 +13,7 @@ feature "User visits the map page" do
 
       expect(parent).to have_css('#submit')
       expect(parent).to have_css('#address')
-      expect(page).to have_content("Enter Your Destination Address")
+      expect(page).to have_content("Enter Your Destination")
       expect(page).to have_button('Park!')
     end
   end

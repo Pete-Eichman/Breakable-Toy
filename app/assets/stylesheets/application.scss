@@ -33,10 +33,10 @@ html, body {
 
 #floating-panel {
   position: absolute;
-  top: 17.5%;
+  top: 15%;
   z-index: 5;
-  left: 22.5%;
-  width: 55%;
+  left: 10%;
+  width: 80%;
   background-color: #EDEBE5;
   color: black;
   text-align: center;
@@ -44,7 +44,7 @@ html, body {
   line-height: 35px;
 
   #address {
-    width: 50%;
+    width: 70%;
     height: 3rem;
     font-size: 1.2rem;
   }
