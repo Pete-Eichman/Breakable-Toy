@@ -4,7 +4,8 @@
       <h1>Edit Parking Pass</h1>
       <hr>
     </div>
-    <div class = "col s6 offset-s3" id="sign_in">
+    <div class="col s10 offset-s1 l6 offset-l3 card-panel z-depth-5" id="sign_in">
+    </br>
       <%= form_for :parking_pass, method: :patch, url: parking_pass_path(@parking_pass) do |f| %>
 
         <%= f.label :pass_number, class: "new_parking_pass_label" %>
@@ -16,7 +17,7 @@
         <%= f.label :price_per_hour, class: "new_parking_pass_label" %>
         <%= f.text_area :price_per_hour, class: "text_area" %>
 
-      <div class="center"></br><%= f.submit "Update", class: "btn" %></div>
+      <div class="center"><%= f.submit "Update", class: "btn" %></div></br>
       <% end %>
     </div>
   </div>

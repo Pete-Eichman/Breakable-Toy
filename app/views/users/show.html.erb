@@ -32,7 +32,7 @@
   <div class="col l8 offset-l2 m10 offset-m1 s8 offset-s2 card-panel z-depth-5" id = "userpasses">
     <h5><%= @user.first_name %>'s owned Parking Passes:</h5>
       <div class="col l8 offset-l2 s12">
-        <div class="col l10 offset-l1 m8 offset-m2 s12 card-panel z-depth-5" id="list"></br>
+        <div class="col l10 offset-l1 m8 offset-m2 s12 card-panel z-depth-2" id="list"></br>
           <% @user.parking_passes.each do |parking_pass| %>
             <div>
               <%= link_to "#{parking_pass.address}", parking_pass_path(parking_pass), class: "btn waves-effect waves-light waves-effect waves-light" %>
