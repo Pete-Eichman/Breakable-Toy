@@ -10,8 +10,8 @@ feature "User visits profile page" do
       expect(page).to have_link "My Profile"
       expect(page).to have_link "Sign Out"
       expect(page).to have_link "Add Parking Pass"
-      expect(page).to have_link "Edit User Account"
-      expect(page).to have_link "Delete User Account"
+      expect(page).to have_link "Edit Account"
+      expect(page).to have_link "Delete Account"
       expect(page).to have_content "#{users[0].first_name}'s Profile"
       expect(page).to have_content "#{users[0].first_name}'s owned Parking Passes:"
       expect(page).to have_content "#{users[0].first_name}'s Bookings:"
@@ -26,8 +26,8 @@ feature "User visits profile page" do
       expect(page).to have_content "#{users[1].first_name}'s owned Parking Passes:"
       expect(page).to have_content "#{users[1].first_name}'s Bookings:"
       expect(page).to_not have_link "Add Parking Pass"
-      expect(page).to_not have_link "Edit User Account"
-      expect(page).to_not have_link "Delete User Account"
+      expect(page).to_not have_link "Edit Account"
+      expect(page).to_not have_link "Delete Account"
     end
   end
 end

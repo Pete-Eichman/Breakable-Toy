@@ -9,11 +9,11 @@ feature "Admin can edit another user's profile" do
       visit user_path(users[1])
 
       expect(page).to have_content "#{users[1].first_name}'s Profile"
-      expect(page).to have_link "Edit User Account"
+      expect(page).to have_link "Edit Account"
     end
     scenario "I click the link to navigate to the edit user page" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
 
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
@@ -30,7 +30,7 @@ feature "Admin can edit another user's profile" do
   context "As an Admin on another User's edit page" do
     scenario "I successfully update account details on the edit page" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass02")
       fill_in("Password confirmation", with: "pass02")
@@ -42,7 +42,7 @@ feature "Admin can edit another user's profile" do
     end
     scenario "I enter a password that's too short" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass1")
       fill_in("Password confirmation", with: "pass1")
@@ -56,7 +56,7 @@ feature "Admin can edit another user's profile" do
     end
     scenario "I enter an incorrect current password" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass02")
       fill_in("Password confirmation", with: "pass02")
@@ -70,7 +70,7 @@ feature "Admin can edit another user's profile" do
     end
     scenario "I enter mis-matching passwords" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass03")
       fill_in("Password confirmation", with: "pass02")
@@ -84,7 +84,7 @@ feature "Admin can edit another user's profile" do
     end
     scenario "I enter an invalid email address" do
       visit user_path(users[1])
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "pblxq")
       fill_in("Password", with: "pass02")
       fill_in("Password confirmation", with: "pass02")

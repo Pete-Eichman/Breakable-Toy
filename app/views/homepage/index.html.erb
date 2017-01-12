@@ -1,33 +1,33 @@
 <% if current_user %>
-<h1 class='center-align'>ParkMe!</h1>
+<h1 class='center-align'>ParkMe!</h1><hr></br>
 <div class='row'>
-  <div class='col s12 l12'>
-    <div class='col s5 l3 push-l2' id="outline">
-      <h3 class='center-align'>Find Parking</h3>
+  <div class='col s12 m12 l12'>
+    <div class='col s5 m5 l3 push-l2' id="outline">
+      <h4 class='center-align'>Look For Parking</h4>
       <hr>
       <div class='row'>
         <div class='col s12' id="sign_in">
-          <ul class='center'>
+          <ol class='left'>
             <li>Click 'Find Parking'.</li></br>
-            <li>Enter the destination.</li></br>
-            <li>Click pins to see more.</li></br>
+            <li>Enter the destination address.</li></br>
+            <li>Click pins to see more info.</li></br>
             <li>Request a booking.</li>
-          </ul>
+          </ol>
         </div>
       </div>
       </br>
     </div>
-    <div class='col s5 push-s2 l3 push-l4' id="outline">
-      <h3 class='center-align'>Rent Your Space</h3>
+    <div class='col s5 push-s2 m5 push-m2 l3 push-l4' id="outline">
+      <h4 class='center-align'>Rent Your Space</h4>
       <hr>
       <div class='row'>
         <div class='col s12' id="sign_in">
-           <ul class='center'>
+           <ol class='left'>
             <li>Click 'My Profile'.</li></br>
             <li>Click 'Add Parking Pass'.</li></br>
             <li>Fill in the required info.</li></br>
             <li>Click 'Create Pass'.</li>
-          </ul>
+          </ol>
         </div>
       </div>
     </br>
@@ -42,7 +42,7 @@
     <% if controller_name != "registrations"%>
       <% if action_name != "new" || action_name != "show" %>
         <div class='row valign'>
-          <div class="center-align">
+          <div class="center">
             <h1>ParkMe!</h1>
           </div>
           <%= render "layouts/sign_in_form" %>
