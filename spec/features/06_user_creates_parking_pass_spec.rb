@@ -35,8 +35,8 @@ feature "User can create a parking pass" do
       expect(page).to have_content "#{user.first_name}"
       expect(page).to have_content "My Profile"
       expect(page).to have_link "Add Parking Pass"
-      expect(page).to have_link "Edit User Account"
-      expect(page).to have_link "Delete User Account"
+      expect(page).to have_link "Edit Account"
+      expect(page).to have_link "Delete Account"
       expect(page).to have_content "#{user.parking_passes[0].pass_number}"
       expect(page).to have_content "#{user.parking_passes[0].address}"
     end
@@ -51,8 +51,8 @@ feature "User can create a parking pass" do
       expect(page).to have_content "Parking Pass could not be mapped, please enter a valid address."
       expect(page).to_not have_content "#{user.first_name}"
       expect(page).to_not have_link "Add Parking Pass"
-      expect(page).to_not have_link "Edit User Account"
-      expect(page).to_not have_link "Delete User Account"
+      expect(page).to_not have_link "Edit Account"
+      expect(page).to_not have_link "Delete Account"
     end
   end
 end
