@@ -11,14 +11,15 @@ html, body {
   font-size: 1rem;
 }
 
+nav {
+  font-size: 2rem;
+  height: 6%;
+}
+
 .nav-wrapper {
   background-color: black;
   height: 7%;
 
-}
-
-.material-icons{
-  color: white;
 }
 
 #map {
@@ -66,12 +67,6 @@ html, body {
   text-align: center;
 }
 
-.btn-large {
-  font-size: 20rem;
-  width: 60%;
-  text-align: center;
-}
-
 .btn:hover {
   background-color: green;
 }
@@ -84,10 +79,6 @@ html, body {
 #delete:hover {
   background-color: red;
   color: black;
-}
-
-.btn-large {
-  font-size: .8rem;
 }
 
 #userpasses {
@@ -153,11 +144,6 @@ html, body {
 
 label {
   font-size: 2rem;
-}
-
-nav {
-  font-size: 2rem;
-  height: 6%;
 }
 
 #parking_pass_pass_number {
