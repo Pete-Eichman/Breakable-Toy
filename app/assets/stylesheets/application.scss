@@ -11,14 +11,15 @@ html, body {
   font-size: 1rem;
 }
 
+nav {
+  font-size: 2rem;
+  height: 6%;
+}
+
 .nav-wrapper {
   background-color: black;
   height: 7%;
 
-}
-
-.material-icons{
-  color: white;
 }
 
 #map {
@@ -66,12 +67,6 @@ html, body {
   text-align: center;
 }
 
-.btn-large {
-  font-size: 20rem;
-  width: 60%;
-  text-align: center;
-}
-
 .btn:hover {
   background-color: green;
 }
@@ -86,10 +81,6 @@ html, body {
   color: black;
 }
 
-.btn-large {
-  font-size: .8rem;
-}
-
 #userpasses {
   background-color: #a5d6a7;
   border: 3px solid #ffffff;
@@ -102,6 +93,9 @@ html, body {
   border-radius: 25px;
 }
 
+#list-text {
+  font-size: 1.5rem;
+}
 #passinfo {
   background-color: #00e5ff;
   border: 3px solid #ffffff;
@@ -125,12 +119,18 @@ html, body {
 }
 
 #outline {
+  position: absolute;
+  height: 35%;
+  width: 25%;
   background-color: #BFCFF7;
   border: 3px solid #000000;
   border-radius: 25px;
 }
 
 #sign_in {
+  position: absolute;
+  height: 70%;
+  width: 90%;
   background-color: #F8F3BF;
   border: 3px solid #000000;
   border-radius: 25px;
@@ -153,11 +153,6 @@ html, body {
 
 label {
   font-size: 2rem;
-}
-
-nav {
-  font-size: 2rem;
-  height: 6%;
 }
 
 #parking_pass_pass_number {
@@ -200,6 +195,9 @@ nav {
   text-align: center;
 }
 
+#account-text {
+  text-decoration: underline;
+}
 
 #facebook {
   background-image: image-url("facebook.png")
