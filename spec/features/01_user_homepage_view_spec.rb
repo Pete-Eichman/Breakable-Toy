@@ -5,7 +5,7 @@ feature "User visits the home page" do
     scenario "I can view the home page" do
       visit '/'
 
-      expect(page).to have_content "Welcome to Pokemon Type Helper!"
+      expect(page).to have_content "ParkMe!"
     end
   end
 end
