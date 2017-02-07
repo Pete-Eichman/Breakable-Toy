@@ -32,16 +32,16 @@ feature "User Updates parking pass info" do
       expect(page).to have_content "Price Per Hour: $2.00"
       expect(page).to have_content "Pass Owner: #{user.first_name} #{user.last_name}"
     end
-    scenario "User clicks update button after entering unmappable address" do
-      click_link "My Profile"
-      click_link "Edit Pass"
-      fill_in("parking_pass[pass_number]", with: "33")
-      fill_in("parking_pass[address]", with: "pblqxz")
-      fill_in("parking_pass[price_per_hour]", with: "2.00")
-      click_button "Update"
-
-      expect(page).to have_content "Parking Pass could not be mapped, please enter a valid address."
-      expect(page).to_not have_content "Parking Pass was Updated!"
-    end
+    # scenario "User clicks update button after entering unmappable address" do
+    #   click_link "My Profile"
+    #   click_link "Edit Pass"
+    #   fill_in("parking_pass[pass_number]", with: "33")
+    #   fill_in("parking_pass[address]", with: "pblqxz")
+    #   fill_in("parking_pass[price_per_hour]", with: "2.00")
+    #   click_button "Update"
+    #
+    #   expect(page).to have_content "Parking Pass could not be mapped, please enter a valid address."
+    #   expect(page).to_not have_content "Parking Pass was Updated!"
+    # end
   end
 end

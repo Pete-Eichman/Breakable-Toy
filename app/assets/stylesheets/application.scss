@@ -11,9 +11,18 @@ html, body {
   font-size: 1rem;
 }
 
-nav {
+h1 {
   font-size: 2rem;
-  height: 6%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+nav {
+  font-size: 1.2rem;
+  height: 70px;
 }
 
 .nav-wrapper {
@@ -25,7 +34,7 @@ nav {
 #map {
   border: 5px solid #000000;
   left: 12.5%;
-  height: 70%;
+  height: 400px;
   top: 7%;
   width: 75%;
   font-size: 2rem;
@@ -34,10 +43,10 @@ nav {
 
 #floating-panel {
   position: absolute;
-  top: 15%;
+  top: 22%;
   z-index: 5;
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 95%;
   background-color: #EDEBE5;
   color: black;
   text-align: center;
@@ -94,7 +103,7 @@ nav {
 }
 
 #list-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 #passinfo {
   background-color: #00e5ff;
@@ -127,12 +136,15 @@ nav {
 }
 
 #sign_in {
-  height: 70%;
-  width: 100%;
+  position: absolute;
+  height: 475px;
+  width: 75%;
+  top: 17.5%;
+  left: 12.5%;
   background-color: #F8F3BF;
   border: 3px solid #000000;
   border-radius: 25px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .search_label {
