@@ -37,3 +37,5 @@ end
 group :development do
   gem 'listen'
 end
+
+ruby "2.3.1"
