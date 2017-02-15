@@ -1,26 +1,21 @@
 <% if current_user == @user || current_user.try(:admin?) %>
   <div class="row center">
-    <div class="col l6 offset-l3 s10 offset-s1">
+    <div class="col l10 offset-l1 m12 s10 offset-s1">
       <h1>
         <%= @user.first_name %>'s Profile
       </h1>
-      <div>
-        <%= link_to "Edit User Account", edit_user_registration_path, class: "btn waves-effect waves-light", id: "edit" %>
-      </div></br>
-      <div>
-        <%= link_to "Delete User Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %></br>
-      </div>
-    </br>
-      <% if current_user == @user %>
-        <%= link_to "Add Parking Pass", new_parking_pass_path, class: "btn waves-effect waves-light" %>
-      <% end %>
-    </br>
+      <h2>
+        Your owned Parking Passes:
+      </h2>
+      <div class="col s12 m6 offset-m3 col l6 offset-l3">
+        <%= link_to "+", new_parking_pass_path, class: "btn-floating waves-effect waves-light red", id: "add" %>
     </div>
+    <% if current_user == @user %>
+    <% end %>
   </div>
-  <% else %>
-  </br>
+<% else %>
   <div class="row center">
-    <div class="col l6 offset-l3 s10 offset-s1" id = "userpasses">
+    <div class="col l6 offset-l3 m12 s10 offset-s1" id = "userpasses">
       <h1>
         <%= @user.first_name %> <%= @user.last_name %>'s Profile
       </h1>
@@ -28,39 +23,39 @@
   </div>
 <% end %>
 <div class="row center">
-  <div class = "col l10 offset-l1 s8 offset-s2" id = "userpasses">
-    <h5><%= @user.first_name %>'s owned Parking Passes:</h5>
-      <div class="col l8 offset-l2 s12">
+  <div class="col l6 offset-l3 m10 offset-m1 s10 offset-s1 card-panel z-depth-5" id = "userpasses">
+
+      <div class="col l10 offset-l1 m10 offset-m1 s12">
         <% @user.parking_passes.each do |parking_pass| %>
-        <div id ="list"><br>
-          <div><%= link_to "#{parking_pass.address}", parking_pass_path(parking_pass), class: "btn waves-effect waves-light waves-effect waves-light" %></div>
-            <ul>
-              <li>Pass Number: <%= parking_pass.pass_number%></li>
-              <li>Price Per Hour: <%= "$ #{'%.02f' % parking_pass.price_per_hour}"  %> </li>
-              <li>Latitude: <%= parking_pass.lat %></li>
-              <li>Longitude: <%= parking_pass.lng %></li>
-            </ul>
+          <div>
+            <%= link_to "Pass Page", parking_pass_path(parking_pass), class: "btn waves-effect waves-green" %>
+          </div>
+          <ul class="col l6 offset-l3 m8 offset-m2 s12" id="list-text">
+            <li>Address: <%= parking_pass.address %>
+            <li>Pass Number: <%= parking_pass.pass_number%></li>
+            <li>Price Per Hour: <%= "$ #{'%.02f' % parking_pass.price_per_hour}"  %> </li>
+            <li>Latitude: <%= parking_pass.lat %></li>
+            <li>Longitude: <%= parking_pass.lng %></li>
+          </ul>
           <% if current_user.try(:admin?) || current_user == @user %>
             <div>
-              <%= link_to "Edit Pass", edit_parking_pass_path(parking_pass), class: "btn waves-effect waves-light", id: "edit" %>
-            </div>
-            </br>
+              <%= link_to "Edit", edit_parking_pass_path(parking_pass), class: "btn waves-effect waves-light", id: "edit" %>
+            </div></br>
             <div>
-              <%= link_to "Delete Pass", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
+              <%= link_to "Delete", parking_pass_path(parking_pass), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
             </div>
-            </br>
           <% else %>
-          </br>
+            </br>
           <% end %>
-        </div>
-        </br>
-      </div>
-      <% end %>
-    </br>
+        <% end %>
+      </br>
+    </div></br>
   </div>
 </div>
+
+
 <div class="row center-align">
-  <div class = "col l10 offset-l1 s8 offset-s2" id = "userpasses">
+  <div class="col l6 offset-l3 m10 offset-m1 s10 offset-s1 card-panel z-depth-5" id = "userpasses">
     <h5><%= @user.first_name %>'s Bookings:</h5>
     <div class="col l8 offset-l2 s12">
       <% @user.bookings.each do |booking| %>
@@ -73,3 +68,17 @@
     </div>
   </div>
 </div>
+
+<% if current_user == @user || current_user.try(:admin?) %>
+  <div class="row center">
+    <div class="col l10 offset-l1 m12 s10 offset-s1">
+      <h2 id="account-text">
+        Account Options
+      </h2>
+    </div>
+    <div class="col s12 m6 offset-m3 col l4 offset-l4">
+      <%= link_to "Edit Account", edit_user_registration_path, class: "btn waves-effect waves-light", id: "edit" %>
+      <%= link_to "Delete Account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light", id: "delete" %>
+    </div>
+  </div>
+<% end %>

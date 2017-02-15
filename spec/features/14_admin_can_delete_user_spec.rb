@@ -9,7 +9,7 @@ feature "Admin can delete user" do
       visit user_path(users[1])
 
       expect(page).to have_content "#{users[1].first_name}'s Profile"
-      expect(page).to have_link "Delete User Account"
+      expect(page).to have_link "Delete Account"
     end
   end
 end

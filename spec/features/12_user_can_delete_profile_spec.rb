@@ -7,11 +7,11 @@ feature "User visits profile page and deletes their profile" do
   context "As a User on My Profile page" do
     scenario "I can click a link to delete my account" do
       click_link "My Profile"
-      click_link "Delete User Account"
+      click_link "Delete Account"
 
       expect(page).to have_content "User Account successfully deleted."
       expect(page).to have_content "ParkMe!"
-      expect(page).to have_content "Please Sign In Below:"
+      expect(page).to have_content "Sign-In"
       expect(page).to have_field "user[email]"
       expect(page).to have_field "user[password]"
       expect(page).to have_button "Sign in"
@@ -24,8 +24,8 @@ feature "User visits profile page and deletes their profile" do
     scenario "I cannot see a link to delete their account" do
       visit user_path(users[1])
 
-      expect(page).to_not have_link "Edit User Account"
-      expect(page).to_not have_link "Delete User Account"
+      expect(page).to_not have_link "Edit Account"
+      expect(page).to_not have_link "Delete Account"
     end
   end
 end

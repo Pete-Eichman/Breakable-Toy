@@ -7,12 +7,16 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    </head>
    <body>
-      <h3 class="center">Enter Your Destination Address</h3>
-      <div id="floating-panel" class= "center">
-       <input id="address" type="textbox" value=" ">
-       <input class="waves-effect waves-teal btn-flat" id="submit" type="button" value="Park!">
+     <div class="row">
+       <div class="col s12">
+         <h4 class="center">Enter Your Destination</h4>
+         <div id="floating-panel" class= "center">
+          <input id="address" type="textbox" value=" ">
+          <input class="waves-effect waves-teal btn-flat" id="submit" type="button" value="Park!">
+        </div>
       </div>
-    <div id="map"></div>
+    </div>
+    <div class="card-panel z-depth-5" id="map"></div>
 
 <script>
   $( document ).ready(function(){

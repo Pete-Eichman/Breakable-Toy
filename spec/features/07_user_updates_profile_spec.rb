@@ -8,7 +8,7 @@ feature "User updates their profile information" do
     scenario "I can click a link to view my account edit page" do
       visit root_path
       click_link "My Profile"
-      click_link "Edit User Account"
+      click_link "Edit Account"
 
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
@@ -25,7 +25,7 @@ feature "User updates their profile information" do
     scenario "I can edit my account details on the edit page" do
       visit root_path
       click_link "My Profile"
-      click_link "Edit User Account"
+      click_link "Edit Account"
       fill_in("Email", with: "testemail01@gmail.com")
       fill_in("Password", with: "pass02")
       fill_in("Password confirmation", with: "pass02")
@@ -39,7 +39,7 @@ feature "User updates their profile information" do
     scenario "I cannot see a link to edit the user's page" do
       visit user_path(users[1])
 
-      expect(page).to_not have_link "Edit User Account"
+      expect(page).to_not have_link "Edit Account"
     end
   end
 end

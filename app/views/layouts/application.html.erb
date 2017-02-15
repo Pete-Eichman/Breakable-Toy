@@ -7,30 +7,33 @@
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
     <% if current_user %>
-      <nav>
-        <div class="nav-wrapper">
-          <div>
-            <div class="left">
-              <i class="material-icons left" id="person_pin">
-                person_pin
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <div>
+              <div class="left">
+                <i class="material-icons left" id="person_pin">
+                  person_pin
+                </i>
+                <%= link_to "My Profile", user_path(current_user)%>
+              </div>
+            <div class="right">
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <i class="material-icons right" id= "power_off">
+                power_settings_new
               </i>
-              <%= link_to "My Profile", user_path(current_user)%>
             </div>
-          <div class="col s6 right">
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <i class="material-icons right" id= "power_off">
-              power_settings_new
-            </i>
-          </div>
-          <div class="center">
-            <%= link_to "Find Parking", maps_path %>
+            <div class="center">
+              <%= link_to "Find Parking", maps_path %>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <% else %>
     <% end %>
     <div class="center-align">

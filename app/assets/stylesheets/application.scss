@@ -11,32 +11,41 @@ html, body {
   font-size: 1rem;
 }
 
-.nav-wrapper {
-  background-color: black;
-  height: 7%;
-
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.material-icons{
-  color: white;
+h2 {
+  font-size: 1.5rem;
+}
+
+nav {
+  font-size: 1.2rem;
+  height: 65px;
+}
+
+.nav-wrapper {
+  background-color: black;
+
 }
 
 #map {
   border: 5px solid #000000;
-  left: 12.5%;
-  height: 70%;
+  left: 7.5%;
+  height: 500px;
   top: 7%;
-  width: 75%;
+  width: 85%;
   font-size: 2rem;
 
 }
 
 #floating-panel {
   position: absolute;
-  top: 17.5%;
+  top: 22%;
   z-index: 5;
-  left: 22.5%;
-  width: 55%;
+  left: 5%;
+  width: 95%;
   background-color: #EDEBE5;
   color: black;
   text-align: center;
@@ -44,7 +53,7 @@ html, body {
   line-height: 35px;
 
   #address {
-    width: 50%;
+    width: 70%;
     height: 3rem;
     font-size: 1.2rem;
   }
@@ -66,12 +75,6 @@ html, body {
   text-align: center;
 }
 
-.btn-large {
-  font-size: 20rem;
-  width: 60%;
-  text-align: center;
-}
-
 .btn:hover {
   background-color: green;
 }
@@ -86,11 +89,8 @@ html, body {
   color: black;
 }
 
-.btn-large {
-  font-size: .8rem;
-}
-
 #userpasses {
+  padding-top: 10px;
   background-color: #a5d6a7;
   border: 3px solid #ffffff;
   border-radius: 25px;
@@ -102,6 +102,9 @@ html, body {
   border-radius: 25px;
 }
 
+#list-text {
+  font-size: 1.3rem;
+}
 #passinfo {
   background-color: #00e5ff;
   border: 3px solid #ffffff;
@@ -124,17 +127,38 @@ html, body {
   text-align: center;
 }
 
-#outline {
+#look-park {
+  position: absolute;
+  height: 250px;
+  width: 60%;
+  top: 30%;
+  left: 20%;
+  background-color: #BFCFF7;
+  border: 3px solid #000000;
+  border-radius: 25px;
+}
+
+#rent-park {
+  position: absolute;
+  height: 250px;
+  top: 75%;
+  width: 60%;
+  left: 20%;
   background-color: #BFCFF7;
   border: 3px solid #000000;
   border-radius: 25px;
 }
 
 #sign_in {
+  position: absolute;
+  height: 590px;
+  width: 75%;
+  top: 17.5%;
+  left: 12.5%;
   background-color: #F8F3BF;
   border: 3px solid #000000;
   border-radius: 25px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .search_label {
@@ -153,11 +177,6 @@ html, body {
 
 label {
   font-size: 2rem;
-}
-
-nav {
-  font-size: 2rem;
-  height: 7%;
 }
 
 #parking_pass_pass_number {
@@ -200,7 +219,14 @@ nav {
   text-align: center;
 }
 
+#account-text {
+  text-decoration: underline;
+}
 
 #facebook {
   background-image: image-url("facebook.png")
+}
+
+#submit {
+  width: 80px;
 }
