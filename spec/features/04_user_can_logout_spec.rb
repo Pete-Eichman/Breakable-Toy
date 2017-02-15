@@ -12,7 +12,7 @@ feature "User can logout" do
       expect(page).to_not have_content("Signed in as")
       expect(page).to_not have_content("Signed in successfully.")
       expect(page).to have_content "ParkMe!"
-      expect(page).to have_content "Please Sign In Below:"
+      expect(page).to have_content "Sign-In"
       expect(page).to have_content("Signed out successfully.")
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
