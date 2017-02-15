@@ -32,10 +32,10 @@ nav {
 
 #map {
   border: 5px solid #000000;
-  left: 12.5%;
-  height: 400px;
+  left: 7.5%;
+  height: 500px;
   top: 7%;
-  width: 75%;
+  width: 85%;
   font-size: 2rem;
 
 }
@@ -90,6 +90,7 @@ nav {
 }
 
 #userpasses {
+  padding-top: 10px;
   background-color: #a5d6a7;
   border: 3px solid #ffffff;
   border-radius: 25px;
@@ -150,7 +151,7 @@ nav {
 
 #sign_in {
   position: absolute;
-  height: 475px;
+  height: 590px;
   width: 75%;
   top: 17.5%;
   left: 12.5%;
@@ -224,4 +225,8 @@ label {
 
 #facebook {
   background-image: image-url("facebook.png")
+}
+
+#submit {
+  width: 80px;
 }

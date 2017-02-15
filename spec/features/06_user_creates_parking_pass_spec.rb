@@ -8,12 +8,11 @@ feature "User can create a parking pass" do
   context "As an authenticated user I can click a link to add a parking pass" do
     scenario "User clicks Add Parking Pass button to navigate to new parking pass page" do
       click_link("My Profile")
-      click_link("Add Parking Pass")
+      click_link("+")
 
       expect(page).to have_link "My Profile"
       expect(page).to have_link "Sign Out"
       expect(page).to have_link "Find Parking"
-      expect(page).to have_content "Add A Parking Pass"
       expect(page).to have_content "Pass number"
       expect(page).to have_content "Address"
       expect(page).to have_content "Price per hour"
@@ -24,7 +23,7 @@ feature "User can create a parking pass" do
     end
     scenario "User fills forms correctly" do
       click_link("My Profile")
-      click_link("Add Parking Pass")
+      click_link("+")
       fill_in("Pass number", with: "S1234567")
       fill_in("Address", with: "10 Park Ave Worcester MA")
       fill_in("Price per hour", with: 2.00)
@@ -34,7 +33,7 @@ feature "User can create a parking pass" do
       expect(page).to have_link "Sign Out"
       expect(page).to have_content "#{user.first_name}"
       expect(page).to have_content "My Profile"
-      expect(page).to have_link "Add Parking Pass"
+      expect(page).to have_link "+"
       expect(page).to have_link "Edit Account"
       expect(page).to have_link "Delete Account"
       expect(page).to have_content "#{user.parking_passes[0].pass_number}"
@@ -42,7 +41,7 @@ feature "User can create a parking pass" do
     end
     scenario "User enters unmappable address and sees an error" do
       click_link "My Profile"
-      click_link "Add Parking Pass"
+      click_link "+"
       fill_in("Pass number", with: "S1234567")
       fill_in("Address", with: "gzrprzrp")
       fill_in("Price per hour", with: 2.00)
