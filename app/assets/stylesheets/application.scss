@@ -12,12 +12,12 @@ html, body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 nav {
@@ -69,11 +69,12 @@ nav {
 
 .btn {
   background-color: #29b6f6;
-  border: 3px solid #ffffff;
-  width: 60%;
-  height: 100%;
-  font-size: 0.8rem;
+  border: 2px solid #ffffff;
+  width: 185px;
+  height: 45px;
+  font-size: 0.65rem;
   text-align: center;
+  margin-top: 5px;
 }
 
 .btn:hover {
@@ -154,14 +155,14 @@ nav {
 
 #sign_in {
   position: absolute;
-  height: 590px;
+  height: 510px;
   width: 75%;
-  top: 25%;
+  top: 12.5%;
   left: 12.5%;
   background-color: #F8F3BF;
   border: 3px solid #000000;
   border-radius: 25px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .search_label {
@@ -232,7 +233,7 @@ label {
 
 #facebook-connect {
   position: absolute;
-  top: 120%;
+  top: 90%;
 }
 
 #submit {
