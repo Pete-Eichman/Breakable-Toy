@@ -14,8 +14,7 @@ feature "User can reset password" do
       expect(page).to have_content("Forgot your password?")
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
-      expect(page).to have_link("Sign in with Facebook")
-      expect(page).to have_button("Send reset password instructions")
+      expect(page).to have_button("E-mail instructions")
     end
   end
 end
