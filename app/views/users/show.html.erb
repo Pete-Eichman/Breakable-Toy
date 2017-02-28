@@ -30,7 +30,7 @@
           <div>
             <%= link_to "Pass Page", parking_pass_path(parking_pass), class: "btn waves-effect waves-green" %>
           </div>
-          <ul class="col l6 offset-l3 m8 offset-m2 s12" id="list-text">
+          <ul class="col l12 m12 s12" id="list-text">
             <li>Address: <%= parking_pass.address %>
             <li>Pass Number: <%= parking_pass.pass_number%></li>
             <li>Price Per Hour: <%= "$ #{'%.02f' % parking_pass.price_per_hour}"  %> </li>

@@ -17,9 +17,11 @@
           <div class='col s12 m10 push-m1 l6 offset-l3'>
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me, id: "remember" %>
+          </div>
+          <div class='col s12 m10 push-m1 l12'>
             <%= f.submit "Sign in", id: "login_btn", class: 'btn' %>
           </div>
-          <div class='col s12 m10 push-m1 l6 offset-l3'>
+          <div class='col s12 m10 push-m1 l12'>
             <%= link_to "Forgot password?", new_user_password_path(:user), id: "top_link", class: "btn waves-effect waves-green" %>
             <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn waves-effect waves-green"  %>
           </div>
