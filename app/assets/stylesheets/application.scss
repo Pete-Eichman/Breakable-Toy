@@ -1,6 +1,8 @@
 // @import "*";
 @import "materialize";
+// * STANDARD MONITOR STYLING * //
 
+// * TAGS * //
 html, body {
   height: 100%;
   margin: 0;
@@ -25,11 +27,49 @@ nav {
   height: 70px;
 }
 
-.nav-wrapper {
-  background-color: black;
-
+label {
+  font-size: 2rem;
 }
 
+// * CLASSES * //
+.nav-wrapper {
+  background-color: black;
+}
+
+.text_area {
+  color: black;
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: #29b6f6;
+  border: 2px solid #ffffff;
+  width: 185px;
+  height: 45px;
+  font-size: 0.65rem;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: green;
+}
+
+.search_text {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.main {
+  font-size: 3.5rem;
+}
+
+.search_label {
+  font-size: 2rem;
+}
+
+// * IDS * //
 #map {
   position: absolute;
   border: 5px solid #000000;
@@ -59,26 +99,6 @@ nav {
     font-size: 1.2rem;
   }
 
-
-}
-
-.text_area {
-  color: black;
-  font-size: 2rem;
-}
-
-.btn {
-  background-color: #29b6f6;
-  border: 2px solid #ffffff;
-  width: 185px;
-  height: 45px;
-  font-size: 0.65rem;
-  text-align: center;
-  margin-top: 5px;
-}
-
-.btn:hover {
-  background-color: green;
 }
 
 #edit:hover {
@@ -107,6 +127,7 @@ nav {
 #list-text {
   font-size: 1.3rem;
 }
+
 #passinfo {
   background-color: #00e5ff;
   border: 3px solid #ffffff;
@@ -121,12 +142,6 @@ nav {
 
 #form {
   background-color: #00e5ff;
-}
-
-.search_text {
-  color: black;
-  font-size: 2rem;
-  text-align: center;
 }
 
 #look-park {
@@ -165,8 +180,19 @@ nav {
   font-size: 1.6rem;
 }
 
-.search_label {
+#user_first_name {
   font-size: 2rem;
+  text-align: center;
+}
+
+#user_last_name {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#user_phone_number {
+  font-size: 2rem;
+  text-align: center;
 }
 
 #user_email {
@@ -179,45 +205,55 @@ nav {
   text-align: center;
 }
 
-label {
+#user_password_confirmation {
   font-size: 2rem;
+  text-align: center;
 }
 
 #parking_pass_pass_number {
   font-size: 2rem;
   text-align: center;
 }
+
 #parking_pass_address {
   font-size: 2rem;
   text-align: center;
 }
+
 #parking_pass_price_per_hour {
   font-size: 2rem;
   text-align: center;
 }
+
 #remember {
   font-size: 2rem;
 }
+
 #booking_first_name {
   font-size: 2rem;
   text-align: center;
 }
+
 #booking_last_name {
   font-size: 2rem;
   text-align: center;
 }
+
 #booking_phone_number {
   font-size: 2rem;
   text-align: center;
 }
+
 #booking_start_time {
   font-size: 2rem;
   text-align: center;
 }
+
 #booking_end_time {
   font-size: 2rem;
   text-align: center;
 }
+
 #booking_date {
   font-size: 2rem;
   text-align: center;
@@ -238,8 +274,4 @@ label {
 
 #submit {
   width: 80px;
-}
-
-.main {
-  font-size: 3.5rem;
 }

@@ -22,10 +22,10 @@
           <%= link_to "Forgot password?", new_user_password_path(:user), id: "top_link", class: "btn waves-effect waves-green" %>
           <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn waves-effect waves-green"  %>
         </div>
-      </div>
-      <div class='col s12 m10 push-m1 l6 offset-l3' id='facebook-connect'>
-        <h2>Connect with Facebook</h2>
-        <%= link_to image_tag("facebook.png"), user_facebook_omniauth_authorize_path, id: "fb_icon" %>
+        <div class='col s12 m10 push-m1 l6 offset-l3' id='facebook-connect'>
+          <h2>Connect with Facebook</h2>
+          <%= link_to image_tag("facebook.png"), user_facebook_omniauth_authorize_path, id: "fb_icon" %>
+        </div>
       </div>
     </div>
   </div>
