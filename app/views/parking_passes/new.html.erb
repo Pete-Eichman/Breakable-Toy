@@ -1,6 +1,6 @@
-<h1 class="center-align">Add A Parking Pass</h1>
 <%= form_for(@parking_pass) do |f| %>
   <div class="row center-align">
+    <h1 class="center-align">Add A Parking Pass</h1>
     <div class="col s6 offset-s3" id="add_pass">
       <div>
         <%= f.label :pass_number, class: "new_parking_pass_label" %>
@@ -10,16 +10,13 @@
         <%= f.label :address, class: "new_parking_pass_label" %>
         <%= f.text_field :address, class: "text_area" %>
       </div>
-
       <div>
         <%= f.label :price_per_hour, class: "new_parking_pass_label" %>
         <%= f.text_field :price_per_hour, class: "text_area" %>
       </div>
-
       <div>
         <%= f.submit "Create Pass", class: "btn waves-effect waves-light" %>
       </div>
-    </br>
     </div>
   </div>
 <% end %>
