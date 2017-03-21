@@ -11,13 +11,12 @@ feature "User visits profile page and deletes their profile" do
 
       expect(page).to have_content "User Account successfully deleted."
       expect(page).to have_content "Park-Me!"
-      expect(page).to have_content "Sign-In"
       expect(page).to have_field "user[email]"
       expect(page).to have_field "user[password]"
       expect(page).to have_button "Sign in"
       expect(page).to have_link "Forgot password?"
       expect(page).to have_link "Sign up"
-      expect(page).to have_content "Connect with Facebook"
+      expect(page).to have_content "Sign in with Facebook"
     end
   end
   context "As a non-admin user on another users profile page" do

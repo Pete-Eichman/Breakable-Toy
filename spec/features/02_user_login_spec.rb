@@ -72,7 +72,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_field("Password")
       expect(page).to have_button("Sign in")
       expect(page).to have_link("Sign up")
-      expect(page).to have_content("Connect with Facebook")
+      expect(page).to have_content("Sign in with Facebook")
       expect(page).to have_link("Forgot password?")
       expect(page).to have_content("Remember me")
     end

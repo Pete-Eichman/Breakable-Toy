@@ -38,7 +38,7 @@ feature "Admin can edit another user's profile" do
       click_button "Update"
 
       expect(page).to have_content "Your account has been updated successfully."
-      expect(page).to have_content "ParkMe!"
+      expect(page).to have_content "Park-Me!"
     end
     scenario "I enter a password that's too short" do
       visit user_path(users[1])

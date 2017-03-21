@@ -1,32 +1,32 @@
 <%= form_for(:user, url: session_path(:user)) do |f| %>
   <div>
-    <div class='row center-align'>
-      <h1 class='main'>Sign-In</h1>
+    <div class="banner">
+      <h1 class="center">Park-Me!</h1>
+    </div>
+    <div class='row' id='sign_in'>
       <%= devise_error_messages! %>
-      <div class='col s12 m12 l12'>
-        <div class='col s12 m10 push-m1 l6 offset-l3'>
+      <div class='col s12 m10 offset-m1 l6 offset-l3' id='sign_in_form'>
+        <div class='col s12 m10 push-m1 l8 offset-l2'>
           <%= f.label :email, "Email", class: "search_label" %>
           <%= f.text_field :email, class: "search_text" %>
         </div>
-        <div class='col s12 m10 push-m1 l6 offset-l3'>
+        <div class='col s12 m10 push-m1 l8 offset-l2'>
           <%= f.label :password, "Password", class: "search_label" %>
           <%= f.password_field :password, class: "search_text" %>
         </div>
-        <div class='col s12 m10 push-m1 l6 offset-l3'>
+        <div class='col s12 m12 l10 offset-l1' id='remember_me'>
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me, id: "remember" %>
-        </div>
-        <div class='col s12 m10 push-m1 l12'>
           <%= f.submit "Sign in", id: "login_btn", class: 'btn' %>
         </div>
         <div class='col s12 m10 push-m1 l12'>
-          <%= link_to "Forgot password?", new_user_password_path(:user), id: "top_link", class: "btn waves-effect waves-green" %>
+          <%= link_to "Forgot password?", new_user_password_path(:user), class: 'forgot', id: "top_link" %>
           <%= link_to "Sign up", new_user_registration_path, id: "top_link", class: "btn waves-effect waves-green"  %>
         </div>
-      </div>
-      <div class='col s12 m10 push-m1 l6 offset-l3' id='facebook-connect'>
-        <h2>Connect with Facebook</h2>
-        <%= link_to image_tag("facebook.png"), user_facebook_omniauth_authorize_path, id: "fb_icon" %>
+        <div class='col s12 m10 push-m1 l12' id='facebook-connect'>
+          <h2>Sign in with Facebook</h2>
+          <%= link_to image_tag("facebook.png"), user_facebook_omniauth_authorize_path, id: "fb_icon" %>
+        </div>
       </div>
     </div>
   </div>

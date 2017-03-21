@@ -9,17 +9,17 @@ html, body {
   padding: 0;
   background-color: #EDEBE6;
   color: black;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1rem;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 nav {
@@ -31,7 +31,23 @@ label {
   font-size: 2rem;
 }
 
+a {
+  width: 300px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 // * CLASSES * //
+.banner {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 3.5rem;
+  height: 115px;
+}
+
 .nav-wrapper {
   background-color: black;
 }
@@ -44,9 +60,9 @@ label {
 .btn {
   background-color: #29b6f6;
   border: 2px solid #ffffff;
-  width: 185px;
-  height: 45px;
-  font-size: 0.65rem;
+  width: 135px;
+  height: 40px;
+  font-size: .95rem;
   text-align: center;
   margin-top: 5px;
 }
@@ -55,21 +71,31 @@ label {
   background-color: green;
 }
 
+.forgot {
+  text-decoration: underline;
+  vertical-align: bottom;
+  padding-right: 40px;
+  padding-left: 19px
+}
+
 .search_text {
   color: black;
   font-size: 2rem;
   text-align: center;
 }
 
-.main {
-  font-size: 3.5rem;
-}
-
 .search_label {
   font-size: 2rem;
+  color: black;
 }
 
 // * IDS * //
+#alerts {
+  position: absolute;
+  top: 115px;
+  width: 100%;
+  background-color: white;
+}
 #map {
   position: absolute;
   border: 5px solid #000000;
@@ -168,16 +194,33 @@ label {
   font-size: 1.4rem;
 }
 
+#sign_in_form {
+  border: solid 2px;
+  border-radius: 20px;
+  height: 550px;
+  background-color: #ffffff;
+}
+
 #sign_in {
   position: absolute;
-  height: 525px;
-  width: 90%;
-  top: 12.5%;
-  left: 5%;
-  background-color: #F8F3BF;
-  border: 3px solid #000000;
-  border-radius: 25px;
-  font-size: 1.6rem;
+  top: 200px;
+  text-align: center;
+  width: 100%;
+}
+
+#sign_up {
+  position: absolute;
+  top: 150px;
+  text-align: center;
+  width: 100%;
+}
+
+#sign_up_form {
+  margin-top: 20px;
+  border: solid 2px;
+  border-radius: 20px;
+  height: 850px;
+  background-color: #ffffff;
 }
 
 #user_first_name {
@@ -226,7 +269,16 @@ label {
 }
 
 #remember {
-  font-size: 2rem;
+  vertical-align: bottom;
+  font-size: 1rem;
+  color: black;
+  padding-right: 42px;
+}
+
+#remember_me{
+  vertical-align: middle;
+  padding-bottom: 25px;
+  color: black;
 }
 
 #booking_first_name {
@@ -263,15 +315,37 @@ label {
   text-decoration: underline;
 }
 
-#facebook {
-  background-image: image-url("facebook.png")
-}
-
 #facebook-connect {
-  position: absolute;
-  top: 95%;
+  vertical-align: middle;
+  padding-top: 35px;
 }
 
+#slide-out {
+  background-color: white;
+}
 #submit {
   width: 80px;
+}
+
+#nav {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  background-color: black;
+  font-size: 3.5rem;
+  height: 100px;
+  z-index: 1;
+}
+
+#menu {
+  font-size: 3rem;
+  color: white;
+}
+
+#logo {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  color: white;
+  line-height: 30px;
 }
