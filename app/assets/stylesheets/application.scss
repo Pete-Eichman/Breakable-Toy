@@ -22,11 +22,6 @@ h2 {
   font-size: 1.5rem;
 }
 
-nav {
-  font-size: 1.25rem;
-  height: 70px;
-}
-
 label {
   font-size: 2rem;
 }
@@ -46,10 +41,6 @@ a {
   color: white;
   font-size: 3.5rem;
   height: 115px;
-}
-
-.nav-wrapper {
-  background-color: black;
 }
 
 .text_area {
@@ -101,7 +92,7 @@ a {
   border: 5px solid #000000;
   left: 7.5%;
   height: 600px;
-  top: 30%;
+  top: 40%;
   width: 85%;
   font-size: 2rem;
 
@@ -109,8 +100,8 @@ a {
 
 #floating-panel {
   position: absolute;
-  top: 22%;
-  z-index: 5;
+  top: 30%;
+  z-index: 10;
   left: 5%;
   width: 95%;
   background-color: #EDEBE5;
@@ -348,4 +339,8 @@ a {
   text-align: center;
   color: white;
   line-height: 30px;
+}
+#add_pass{
+  position: absolute;
+  top: 20%;
 }
