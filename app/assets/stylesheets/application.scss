@@ -14,11 +14,15 @@ html, body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: bold;
 }
 
 h2 {
+  font-size: 2.7rem;
+}
+
+h3 {
   font-size: 1.5rem;
 }
 
@@ -61,6 +65,7 @@ a {
 }
 .btn-floating {
   z-index: 0;
+  margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -85,10 +90,28 @@ a {
   color: black;
 }
 
+.side-nav {
+  background-color: #eeeeee;
+}
+
+.side-nav a{
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 2
+}
+
 // * IDS * //
+#account-options {
+  position: relative;
+  top: 200px;
+}
+
 #alerts {
   position: absolute;
-  top: 115px;
+  top: 15%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -124,29 +147,98 @@ a {
 
 }
 
-#edit {
+#edit-account {
+  z-index: 0;
+  width: 200px;
+  margin-right: 100px;
+}
+
+#delete-account {
+  z-index: 0;
+  width: 200px;
+}
+
+#edit-pass {
+  z-index: 0;
+  margin-right: 25px;
+}
+
+#delete-pass {
   z-index: 0;
 }
 
-#delete {
-  z-index: 0;
-}
-
-#edit:hover {
+#edit-account:hover {
   background-color: yellow;
   color: black;
 }
 
-#delete:hover {
+#delete-account:hover {
   background-color: red;
   color: black;
 }
 
-#userpasses {
+#edit-pass:hover {
+  background-color: yellow;
+  color: black;
+}
+
+#delete-pass:hover {
+  background-color: red;
+  color: black;
+}
+
+#edit-page {
+  position: relative;
+  top: 100px;
+}
+
+#user-passes {
+  position: relative;
+  top: 125px;
   padding-top: 10px;
-  background-color: #a5d6a7;
-  border: 3px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 3px solid #000000;
   border-radius: 25px;
+  padding-bottom: 25px;
+}
+
+#user-bookings {
+  position: relative;
+  top: 200px;
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 3px solid #000000;
+  border-radius: 25px;
+}
+
+#user-index {
+  position: relative;
+  top: 100px;
+}
+
+#parking-pass {
+  background-color: #fff59d;
+  border: solid 3px;
+  border-color: black;
+  border-radius: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 25px;
+}
+
+#profile-header {
+  position: relative;
+  top: 100px;
+}
+
+#user-booking-header{
+  position: relative;
+  top: 200px;
+}
+
+#no-passes {
+  color: white;
 }
 
 #list {
@@ -160,23 +252,17 @@ a {
 }
 
 #pass-info {
-  position: absolute;
-  top: 17.5%;
-  background-color: #a5d6a7;
+  position: relative;
+  top: 100px;
+  background-color: #fff59d;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }
 
 #booking-info {
-  position: absolute;
-  top: 80%;
-  background-color: #a5d6a7;
-  border: 3px solid #ffffff;
-  border-radius: 25px;
-}
-
-#edituser {
-  background-color: #00e5ff;
+  position: relative;
+  top: 100px;
+  background-color: #fff59d;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }
@@ -186,27 +272,25 @@ a {
 }
 
 #look-park {
-  position: absolute;
-  height: 325px;
-  top: 17.5%;
-  width: 50%;
-  left: 25%;
+  position: relative;
+  height: 400px;
+  top: 150px;
+  text-align: center;
   background-color: #BFCFF7;
   border: 3px solid #000000;
   border-radius: 25px;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 #rent-park {
-  position: absolute;
-  height: 325px;
-  width: 50%;
-  left: 25%;
-  top: 75%;
+  position: relative;
+  height: 400px;
+  top: 300px;
+  text-align: center;
   background-color: #BFCFF7;
   border: 3px solid #000000;
   border-radius: 25px;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 #sign_in_form {
@@ -326,18 +410,11 @@ a {
   text-align: center;
 }
 
-#account-text {
-  text-decoration: underline;
-}
-
 #facebook-connect {
   vertical-align: middle;
   padding-top: 35px;
 }
 
-#slide-out {
-  background-color: white;
-}
 #submit {
   width: 80px;
 }
@@ -364,35 +441,3 @@ a {
   color: white;
   line-height: 30px;
 }
-
-#profile {
-  position: absolute;
-  top: 17.5%;
-}
-
-/* MOBILE SCREEN CSS */
-@media screen and (max-width: 500px) {
-  #look-park {
-    position: absolute;
-    height: 325px;
-    top: 27.5%;
-    width: 75%;
-    left: 12.5%;
-    background-color: #BFCFF7;
-    border: 3px solid #000000;
-    border-radius: 25px;
-    font-size: 1.4rem;
-  }
-
-  #rent-park {
-    position: absolute;
-    height: 325px;
-    width: 75%;
-    left: 12.5%;
-    top: 90%;
-    background-color: #BFCFF7;
-    border: 3px solid #000000;
-    border-radius: 25px;
-    font-size: 1.4rem;
-  }
-};

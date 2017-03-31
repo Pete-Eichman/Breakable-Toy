@@ -35,8 +35,8 @@ feature "User visits profile page and sees their parking pass" do
       expect(page).to have_link("Edit Account")
       expect(page).to have_link("+")
       expect(page).to have_link("Delete Account")
-      expect(page).to have_content("Your owned Parking Passes:")
-      expect(page).to have_content("#{user.first_name}'s Bookings:")
+      expect(page).to have_content("This user has no parking passes yet.")
+      expect(page).to have_content("My Bookings")
       expect(page).to_not have_link("Pass Page")
     end
   end

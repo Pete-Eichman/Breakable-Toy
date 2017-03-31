@@ -31,7 +31,6 @@ feature "User can create a parking pass" do
 
       expect(page).to have_link("My Profile")
       expect(page).to have_link("Sign Out")
-      expect(page).to have_content("#{user.first_name}")
       expect(page).to have_content("My Profile")
       expect(page).to have_link("+")
       expect(page).to have_link("Edit Account")
