@@ -5,7 +5,7 @@
 # Park-Me!
 Park-Me was written using the following:
 
-Back End
+##Back End
 * Ruby -v 2.3.1
 * Rails -v 5.0.0.1
 * PostgreSQL -v 0.15
@@ -13,15 +13,15 @@ Back End
 * Google Geocoder API
 * Twilio API via twilio-ruby gem -v 4.11.1
 
-Front End
+##Front End
 * Materialize SCSS via materialize-sass gem
 
-Testing
+##Testing
 * Rspec-rails gem
 * Capybara & Capybara-webkit gems
 * Factory Girl
 
-Other included gems
+##Other included gems
 * Geokit-rails to validate Parking Pass model
 * Devise gem for user authentication
 * Omniauth-facebook gem for user authentication
