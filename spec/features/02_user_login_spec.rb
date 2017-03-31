@@ -14,6 +14,8 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_link("Sign up")
       expect(page).to have_content("Remember me")
       expect(page).to have_css("#fb_icon")
+      expect(page).to have_content("Sign in with Facebook")
+      expect(page).to have_link("Facebook")
     end
 
     scenario "User successfully logs in" do
@@ -23,19 +25,24 @@ feature "As an unauthenticated user, I can log in" do
       click_button("Sign in")
       page.find('i#person_pin')
       page.find('i#power_off')
+      page.find('i#directions')
 
+      expect(page).to have_content("Signed in successfully.")
+      expect(page).to have_content("Look For Parking")
+      expect(page).to have_link("Home")
       expect(page).to have_link("My Profile")
-      expect(page).to have_link("Sign Out")
-      expect(page).to have_css("i#person_pin")
-      expect(page).to have_css("i#power_off")
       expect(page).to have_link("Find Parking")
-      expect(page).to_not have_content("Email")
+      expect(page).to have_link("Sign Out")
+      expect(page).to have_link("☰")
+      expect(page).to have_link("Find Parking")
+      expect(page).to have_css("i#home")
+      expect(page).to have_css("i#person_pin")
+      expect(page).to have_css("i#directions")
+      expect(page).to have_css("i#power_off")
       expect(page).to_not have_field("Email")
-      expect(page).to_not have_content("Password")
       expect(page).to_not have_field("Password")
       expect(page).to_not have_button("Sign in")
       expect(page).to_not have_link("Forgot password?")
-      expect(page).to_not have_content("Remember me")
     end
 
     scenario "User attempts to log in with a nonexistent account" do
@@ -44,6 +51,7 @@ feature "As an unauthenticated user, I can log in" do
       check("Remember me")
       click_button("Sign in")
 
+      expect(page).to have_content("You must sign in with an existing account, or create an account to sign in.")
       expect(page).to have_content("Sign Up")
       expect(page).to have_content("First name")
       expect(page).to have_field("First name")
@@ -54,6 +62,7 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
       expect(page).to have_content("Password")
+      expect(page).to have_content("(must be 6 characters minimum)")
       expect(page).to have_field("Password")
       expect(page).to have_content("Password confirmation")
       expect(page).to have_field("Password confirmation")
@@ -75,9 +84,6 @@ feature "As an unauthenticated user, I can log in" do
       expect(page).to have_content("Sign in with Facebook")
       expect(page).to have_link("Forgot password?")
       expect(page).to have_content("Remember me")
-    end
-    scenario "User can see a Facebook login link" do
-      expect(page).to have_link("Facebook")
     end
   end
 end

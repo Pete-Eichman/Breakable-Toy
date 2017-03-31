@@ -9,7 +9,7 @@ feature "User can reset password" do
     end
 
     scenario "I can navigate to the password reset form" do
-      click_link "Forgot password?"
+      click_link("Forgot password?")
 
       expect(page).to have_content("Forgot your password?")
       expect(page).to have_content("Email")

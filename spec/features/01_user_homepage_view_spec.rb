@@ -5,7 +5,8 @@ feature "User visits the home page" do
     scenario "I can view the home page" do
       visit '/'
 
-      expect(page).to have_content "Park-Me!"
+      expect(page).to have_content("Park-Me!")
+      expect(page).to_not have_content("Look For Parking")
     end
   end
 end

@@ -6,25 +6,26 @@ feature "User visits profile page and deletes their profile" do
   before { visit root_path }
   context "As a User on My Profile page" do
     scenario "I can click a link to delete my account" do
-      click_link "My Profile"
-      click_link "Delete Account"
+      click_link("My Profile")
+      click_link("Delete Account")
 
-      expect(page).to have_content "User Account successfully deleted."
-      expect(page).to have_content "Park-Me!"
-      expect(page).to have_field "user[email]"
-      expect(page).to have_field "user[password]"
-      expect(page).to have_button "Sign in"
-      expect(page).to have_link "Forgot password?"
-      expect(page).to have_link "Sign up"
-      expect(page).to have_content "Sign in with Facebook"
+      expect(page).to have_content("User Account successfully deleted.")
+      expect(page).to have_content("Park-Me!")
+      expect(page).to have_field("user[email]")
+      expect(page).to have_field("user[password]")
+      expect(page).to have_button("Sign in")
+      expect(page).to have_link("Forgot password?")
+      expect(page).to have_link("Sign up")
+      expect(page).to have_content("Sign in with Facebook")
+      expect(page).to have_link("Facebook")
     end
   end
   context "As a non-admin user on another users profile page" do
     scenario "I cannot see a link to delete their account" do
       visit user_path(users[1])
 
-      expect(page).to_not have_link "Edit Account"
-      expect(page).to_not have_link "Delete Account"
+      expect(page).to_not have_link("Edit Account")
+      expect(page).to_not have_link("Delete Account")
     end
   end
 end
