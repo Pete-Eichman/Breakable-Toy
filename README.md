@@ -20,7 +20,7 @@ Park-Me was written using the following:
 ## Testing
 * Rspec-rails gem
 * Capybara & Capybara-webkit gems
-* Factory Girl
+* Factory Girl via the factory_girl_rails gem
 
 ## Other included gems
 * Geokit-rails to validate Parking Pass model
