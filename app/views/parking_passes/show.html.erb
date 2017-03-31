@@ -1,4 +1,4 @@
-<div class="row center-align">
+<div class="row center">
   <div class="col s12 m8 offset-m2 l6 offset-l3 card-panel z-depth-3" id="pass-info">
     <h1><%= @parking_pass.address %></h1>
     <h2>Pass #: <%= @parking_pass.pass_number %></h2>
@@ -6,7 +6,7 @@
     <h2>Pass Owner: <%= @parking_pass.user.first_name %> <%= @parking_pass.user.last_name %></h2>
   </br>
   <% if current_user != @parking_pass.user %>
-    <div class="center-align">
+    <div class="center">
       <%= link_to "Book", new_parking_pass_booking_path(@parking_pass), class: "btn waves-effect waves-light card-panel z-depth-2" %>
     </div>
   <% end %>
@@ -14,11 +14,11 @@
   </div>
 </div>
 </br>
-<div class="row center-align">
+<div class="row center">
   <div class="col s12 m8 offset-m2 l6 offset-l3 card-panel z-depth-5" id="booking-info">
     <h3 class="center-align">Bookings:</h3>
     <% @parking_pass.bookings.each do |booking| %>
-      <ul class= "center-align">
+      <ul class= "center">
         <li>Start Time: <%= booking.start_time%></li>
         <li>End Time: <%= booking.end_time%></li>
       </ul>

@@ -7,7 +7,6 @@ feature "User visits the Users Index Page" do
     before { login_as(admin, scope: :user) }
     scenario "User can see the Users Index" do
       visit users_path
-      save_and_open_page
 
       expect(page).to have_content("Users Index - ADMINS ONLY")
       expect(page).to have_link("#{users[0].email}")
