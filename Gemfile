@@ -22,8 +22,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'shoulda'
   gem 'valid_attribute'
-  gem 'listen'
-  gem 'database_cleaner'
 end
 
 group :test do
