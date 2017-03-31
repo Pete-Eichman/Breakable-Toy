@@ -15,6 +15,7 @@ Park-Me was written using the following:
 
 ## Front End
 * Materialize SCSS via materialize-sass gem
+* jQuery via the jquery-rails gem
 
 ## Testing
 * Rspec-rails gem
