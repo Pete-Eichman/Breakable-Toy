@@ -28,7 +28,7 @@ Other included gems
 * JQuery-Rails
 
 
-#Get Set Up
+# Get Set Up
 * Clone down the repository.
 * Run 'bundle install' or 'bundle exec bundle install' to download the Gemfile.
 * Run the following commands to setup the database:
