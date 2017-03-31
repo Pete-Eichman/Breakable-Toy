@@ -1,0 +1,1 @@
+$(".button-collapse").sideNav({menuWidth:275,edge:"left",closeOnClick:!0,draggable:!0});
