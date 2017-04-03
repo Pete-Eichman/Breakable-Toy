@@ -11,62 +11,64 @@
   </head>
   <body>
     <% if current_user %>
-      <ul id="slide-out" class="side-nav">
-        <li>
-          <div>
-            <h2 class='center'>Menu</h2>
+      <div class="row center">
+        <ul id="slide-out" class="side-nav">
+          <li>
+            <div>
+              <h2 class='center'>Menu</h2>
+            </div>
+          </li>
+          <li><div class="divider"></div></li>
+          <li class="center">
+            <div class="valign-wrapper">
+              <i class="material-icons left" id="home">home</i>
+              <%= link_to "Home", root_path%>
+            </div>
+          </li>
+          <li><div class="divider"></div></li>
+          <li class="center">
+            <div class="valign-wrapper">
+              <i class="material-icons left" id="person_pin">person_pin</i>
+              <%= link_to "My Profile", user_path(current_user)%>
+            </div>
+          </li>
+          <li><div class="divider"></div></li>
+          <li class="center">
+            <div class="valign-wrapper">
+              <i class="material-icons left" id= "directions">directions_car</i>
+              <%= link_to "Find Parking", maps_path %>
+            </div>
+          </li>
+          <li><div class="divider"></div></li>
+          <li class="center">
+            <div class="valign-wrapper">
+              <i class="material-icons left" id= "power_off">power_settings_new</i>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </div>
+          </li>
+          <li><div class="divider"></div></li>
+        </ul>
+        <div class="row col s12 m12 l12" id="nav">
+          <div class="col s1 m1 l1">
+            <a href="" data-activates="slide-out" class="button-collapse" id="menu">&#x2630;</a>
           </div>
-        </li>
-        <li><div class="divider"></div></li>
-        <li class="center">
-          <div class="valign-wrapper">
-            <i class="material-icons left" id="home">home</i>
-            <%= link_to "Home", root_path%>
+          <div class="col s11 m11 l11">
+            <h1 id="logo">Park-Me!</h1>
           </div>
-        </li>
-        <li><div class="divider"></div></li>
-        <li class="center">
-          <div class="valign-wrapper">
-            <i class="material-icons left" id="person_pin">person_pin</i>
-            <%= link_to "My Profile", user_path(current_user)%>
-          </div>
-        </li>
-        <li><div class="divider"></div></li>
-        <li class="center">
-          <div class="valign-wrapper">
-            <i class="material-icons left" id= "directions">directions_car</i>
-            <%= link_to "Find Parking", maps_path %>
-          </div>
-        </li>
-        <li><div class="divider"></div></li>
-        <li class="center">
-          <div class="valign-wrapper">
-            <i class="material-icons left" id= "power_off">power_settings_new</i>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          </div>
-        </li>
-        <li><div class="divider"></div></li>
-      </ul>
-      <div class="row col s12 m12 l12" id="nav">
-        <div class="col s1 m1 l1">
-          <a href="" data-activates="slide-out" class="button-collapse" id="menu">&#x2630;</a>
         </div>
-        <div class="col s11 m11 l11">
-          <h1 id="logo">Park-Me!</h1>
-        </div>
+      <% else %>
+      <% end %>
+      <div class="center-align" id="alerts">
+        <% if flash[:notice] %>
+          <p><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:success] %>
+          <p><%= flash[:success] %></p>
+        <% end %>
+        <% if flash[:errors] %>
+          <p><%= flash[:errors] %></p>
+        <% end %>
       </div>
-    <% else %>
-    <% end %>
-    <div class="center-align" id="alerts">
-      <% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
-      <% end %>
-      <% if flash[:success] %>
-        <p><%= flash[:success] %></p>
-      <% end %>
-      <% if flash[:errors] %>
-        <p><%= flash[:errors] %></p>
-      <% end %>
     </div>
     <%= yield %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>

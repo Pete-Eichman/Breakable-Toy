@@ -5,6 +5,7 @@ feature "As an unauthenticated user, I can log in" do
   let!(:user) { FactoryGirl.create(:user, first_name: "FirstName1", last_name: "LastName1", password: "password1", password_confirmation: "password1") }
   context "User visits the home page" do
     scenario "User sees a page with login information" do
+      
       expect(page).to have_content("Email")
       expect(page).to have_field("Email")
       expect(page).to have_content("Password")

@@ -1,7 +1,7 @@
 <%= form_for(@parking_pass) do |f| %>
-  <div class="row center-align">
-    <h1 class="col s12 m12 l12">Add A Parking Pass</h1>
-    <div class="col s6 offset-s3" id="add_pass">
+  <div class="row center-align" id="edit-page">
+    <h1 class="center">Add A Parking Pass</h1>
+    <div class="col s10 offset-s1 m10 offset-m1 l8 offset-l2 " id="add_pass">
       <div>
         <%= f.label :pass_number, class: "new_parking_pass_label" %>
         <%= f.text_field :pass_number %>
@@ -15,7 +15,7 @@
         <%= f.text_field :price_per_hour, class: "text_area" %>
       </div>
       <div>
-        <%= f.submit "Create Pass", class: "btn waves-effect waves-light" %>
+        <%= f.submit "Create Pass", class: "btn waves-effect waves-light", id: "create" %>
       </div>
     </div>
   </div>
