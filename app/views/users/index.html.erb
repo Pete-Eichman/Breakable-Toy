@@ -1,17 +1,10 @@
 <div class="row center" id="user-index">
   <div class="col s12 m12 l12">
     <h1 class="main">Users Index - ADMINS ONLY</h1><hr>
-    <% if current_user.try(:admin?) %>
       <ul>
         <% @users.each do |user| %>
           <li><%= link_to user.email, user_path(user) %></li>
         <% end %>
       </ul>
-    <% else %>
-      <div class="col s12 m10 offset-m1 l10 offset-l1">
-        <h2>Sorry, but you're not an admin, so you don't get access to this info.</h2>
-        <h2>Click the 'My Profile' link in the navbar to get back to your profile.</h2>
-      </div>
-    <% end %>
   </div>
 </div>

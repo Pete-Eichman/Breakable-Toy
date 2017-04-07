@@ -1,9 +1,11 @@
 <div class="row center">
-  <div class="col s12 m8 offset-m2 l6 offset-l3 card-panel z-depth-3" id="pass-info">
-    <h1><%= @parking_pass.address %></h1>
+  <div class="col s12 m10 offset-m1 l8 offset-l2 card-panel z-depth-3" id="pass-info">
+    <h2>Address:</h2>
+    <h2><%= @parking_pass.address %></h2>
     <h2>Pass #: <%= @parking_pass.pass_number %></h2>
     <h2>Price Per Hour: <%= "$#{'%.02f' % @parking_pass.price_per_hour}"  %></h2>
-    <h2>Pass Owner: <%= @parking_pass.user.first_name %> <%= @parking_pass.user.last_name %></h2>
+    <h2>Pass Owner:</h2>
+    <h2><%= @parking_pass.user.first_name %> <%= @parking_pass.user.last_name %></h2>
   </br>
   <% if current_user != @parking_pass.user %>
     <div class="center">
@@ -15,8 +17,8 @@
 </div>
 </br>
 <div class="row center">
-  <div class="col s12 m8 offset-m2 l6 offset-l3 card-panel z-depth-5" id="booking-info">
-    <h3 class="center-align">Bookings:</h3>
+  <div class="col s12 m10 offset-m1 l8 offset-l2 card-panel z-depth-5" id="booking-info">
+    <h2 class="center-align">Bookings:</h2>
     <% @parking_pass.bookings.each do |booking| %>
       <ul class= "center">
         <li>Start Time: <%= booking.start_time%></li>

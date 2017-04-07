@@ -91,12 +91,15 @@ a {
 }
 
 .side-nav {
-  background-color: #eeeeee;
+  background-color: black;
+  color: white;
+  border-right: solid 2px white;
 }
 
 .side-nav a{
   text-align: left;
   font-size: 1.5rem;
+  color: white;
 }
 
 .nav-link {
@@ -189,6 +192,7 @@ a {
 
 #edit-page {
   position: relative;
+  width: 100%;
   top: 100px;
 }
 
@@ -254,7 +258,7 @@ a {
 #pass-info {
   position: relative;
   top: 100px;
-  background-color: #fff59d;
+  background-color: #69f0ae;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }
@@ -262,7 +266,7 @@ a {
 #booking-info {
   position: relative;
   top: 100px;
-  background-color: #fff59d;
+  background-color: #69f0ae;
   border: 3px solid #ffffff;
   border-radius: 25px;
 }

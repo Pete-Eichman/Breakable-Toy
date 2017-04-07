@@ -13,14 +13,4 @@ feature "User visits the Users Index Page" do
       expect(page).to have_link("#{users[1].email}")
     end
   end
-  context "As user who is not an admin" do
-    before { login_as(users[0], scope: :user) }
-    scenario "User cannot see the Users Index" do
-      visit users_path
-
-      expect(page).to have_content("Users Index - ADMINS ONLY")
-      expect(page).to have_content("Sorry, but you're not an admin, so you don't get access to this info.")
-      expect(page).to have_content("Click the 'My Profile' link in the navbar to get back to your profile.")
-    end
-  end
 end
