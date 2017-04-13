@@ -1,9 +1,5 @@
 class BookingsController < ApplicationController
 
-  def index
-
-  end
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -28,10 +24,6 @@ class BookingsController < ApplicationController
       flash[:errors] = "Booking could not be saved."
       render :new
     end
-  end
-
-  def destroy
-
   end
 
   def accept_or_reject
