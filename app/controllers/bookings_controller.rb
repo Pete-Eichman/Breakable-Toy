@@ -30,16 +30,6 @@ class BookingsController < ApplicationController
     end
   end
 
-
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
   def destroy
 
   end
@@ -50,17 +40,13 @@ class BookingsController < ApplicationController
     begin
       @host = User.find_by(phone_number: incoming)
       @reservation = @host.pending_booking
-
       if sms_input == "accept" || sms_input == "yes"
         @booking.confirm!
       else
         @booking.reject!
       end
-
       @host.check_for_bookings_pending
-
       @booking.notify_guest
-
       sms_reponse = "You have successfully #{@booking.status} the booking."
       respond(sms_reponse)
     rescue
@@ -78,7 +64,6 @@ class BookingsController < ApplicationController
     render xml: response.text
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def booking_params
     params.require(:booking).permit(:first_name, :date, :last_name, :phone_number, :start_time, :end_time, :message)
   end

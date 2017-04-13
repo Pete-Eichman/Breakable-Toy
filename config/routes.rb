@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations', sessions: 'sessions', omniauth_callbacks: 'callbacks' }
   resources :users
   resources :parking_passes do
-    resources :bookings
+    resources :bookings, only: [:index, :show, :new, :create, :destroy]
   end
   post "bookings/incoming", to: 'booking#accept_or_reject', as: 'incoming'
   resources :maps
